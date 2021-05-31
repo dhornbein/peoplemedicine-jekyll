@@ -15,11 +15,11 @@ $blue: #06bcef;
 $pink: #eb4141;
 $pink-invert: #1d0e0e;
 // Update the sans-serif font family
-$family-sans-serif: "Helvetica", "Arial", sans-serif;
+$family-sans-serif: 'Nunito', sans-serif;
 
 // 3. Set the derived variables
 // Use the new pink as the primary color
-$primary: $blue;
+$primary: $pink;
 $primary-invert: $pink-invert;
 
 // 4. Import the rest of Bulma
