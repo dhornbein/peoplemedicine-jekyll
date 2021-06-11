@@ -25,3 +25,8 @@ $primary-invert: $pink-invert;
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
+
+.hero.has-bg-hands {
+    background: url(../img/pm_hands.png) no-repeat center center;
+    background-size: auto 600px;
+}
