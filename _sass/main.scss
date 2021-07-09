@@ -1,30 +1,71 @@
 @charset "utf-8";
 
-// Customization
-
-// You can easily customize Bulma with your own variables.
-// Just uncomment the following block to see the result.
-
-// 1. Import the initial variables
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 
-// 2. Set your own initial variables
-// Update the blue shade, used for links
-$blue: #06bcef;
-// Add pink and its invert
-$pink: #f06666;
-$pink-invert: #1d0e0e;
+$white-ter: #FFF8E7;
+$black-ter: #0D000D;
+
+$pink: #FF77F9;
+$pink-invert: #30102e;
+$orange: #FFA47F;
+$yellow: #F9E800;
+$green: #C3FF6F;
+$powder-green: #9FF297;
+$powder-green-invert: #2d462b;
+$cyan: #87FFDD;
+$baby-blue: #97F7FF;
+$baby-blue-invert: #254244;
+$blue: #35C7FF;
+$purple: #A992FF;
+$red: #FD4796;
+
 // Update the sans-serif font family
 $family-sans-serif: 'Nunito', sans-serif;
 
-// 3. Set the derived variables
-// Use the new pink as the primary color
-$primary: $pink;
-$primary-invert: $pink-invert;
+$primary: $red;
+$link: $blue;
+$info: $cyan;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+$dark: $grey-darker;
+$text: $black-ter;
+
+$body-background-color: $white-ter;
+
+@import "../node_modules/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "pink":($pink, $pink-invert),
+  "orange":($orange, $orange-invert),
+  "yellow":($yellow, $yellow-invert),
+  "cyan":($cyan, $cyan-invert),
+  "blue":($blue, $blue-invert),
+  "purple":($purple, $purple-invert),
+  "red":($red, $red-invert),
+  "green":($green, $green-invert),
+  "green-light":($powder-green, $powder-green-invert),
+  "blue-light":($baby-blue, $baby-blue-invert)
+);
+$colors: map-merge($colors, $addColors);
 
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
+
+.has-rounded-corners {
+  border-radius: 4px;
+}
+
+.title.is-display {
+  @include from($tablet) {
+    font-size: 4.5rem;
+  }
+}
+
+.field.is-flex-wrap-wrap {
+  margin-top: -0.75rem;
+  .control { margin-top: 0.75rem;}
+}
 
 .hero.has-bg-hands {
     background: url(../img/pm_hands.png) no-repeat center center;
@@ -34,6 +75,96 @@ $primary-invert: $pink-invert;
 .hero.has-bg-hands-bottom {
     background: url(../img/pm_hands_bottom.png) no-repeat center center;
     background-size: contain;
+}
+
+.bios {
+  $padding: 360px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  overflow: hidden;
+  padding: $padding/2 0;
+  @include until($tablet) {
+    flex-direction: column;
+  }
+
+  .bio {
+    min-height: 360px;
+    max-width: 360px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:first-child { 
+      margin-right: $padding/2; 
+      @include until($tablet)  {
+        margin: 0 0 $padding/2;
+      }
+    }
+    &::after {
+      content: "";
+      background-size: auto 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+
+      transform: scale(2.3);
+    }
+    &.bio--maria {
+      &::after { background-image: url(../img/web-bio-cirlce-teal.svg); }
+      color: $cyan;
+    }
+    &.bio--drew {
+      &::after { background-image: url(../img/web-bio-cirlce-orange.svg); }
+      color: $orange;
+    }
+    .title { color: inherit; }
+  }
+}
+
+.has-large-circle {
+  $top-color:$black-ter;
+  $bg-color: $body-background-color;
+  $bottom-color: $green;
+
+  background-image: 
+  url(../img/web-logo-circle-color-shape.png),
+    linear-gradient(-179deg, $top-color, $top-color 25%, $bg-color 25.2%, $bg-color 75%, $bottom-color 75.2%, $bottom-color);
+  
+  background-color: $top-color;
+  background-size: auto 95%, auto;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  height: 90vh;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left:0;
+    width: 100%;
+  }
+  &::before {
+    border-top:4px solid $top-color;
+    top: -2px
+  }
+  &::after {
+    border-bottom:4px solid $bottom-color;
+    bottom: -2px
+  }
 }
 
 .arrow
@@ -50,7 +181,7 @@ $primary-invert: $pink-invert;
     */
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MTIiIGlkPSJzdmcyIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzIGlkPSJkZWZzNCIvPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTU0MC4zNjIyKSI+PHBhdGggZD0ibSAxMjcuNDA2MjUsNjU3Ljc4MTI1IGMgLTQuOTg1MywwLjA3ODQgLTkuOTEwNzcsMi4xNjMwOCAtMTMuNDM3NSw1LjY4NzUgbCAtNTUsNTUgYyAtMy42MDA1NjUsMy41OTkyNyAtNS42OTY4ODMsOC42NTg5NSAtNS42OTY4ODMsMTMuNzUgMCw1LjA5MTA1IDIuMDk2MzE4LDEwLjE1MDczIDUuNjk2ODgzLDEzLjc1IEwgMjQyLjI1LDkyOS4yNSBjIDMuNTk5MjcsMy42MDA1NiA4LjY1ODk1LDUuNjk2ODggMTMuNzUsNS42OTY4OCA1LjA5MTA1LDAgMTAuMTUwNzMsLTIuMDk2MzIgMTMuNzUsLTUuNjk2ODggTCA0NTMuMDMxMjUsNzQ1Ljk2ODc1IGMgMy42MDA1NiwtMy41OTkyNyA1LjY5Njg4LC04LjY1ODk1IDUuNjk2ODgsLTEzLjc1IDAsLTUuMDkxMDUgLTIuMDk2MzIsLTEwLjE1MDczIC01LjY5Njg4LC0xMy43NSBsIC01NSwtNTUgYyAtMy41OTgxNSwtMy41OTEyNyAtOC42NTA2OCwtNS42ODEyNyAtMTMuNzM0MzgsLTUuNjgxMjcgLTUuMDgzNjksMCAtMTAuMTM2MjIsMi4wOSAtMTMuNzM0MzcsNS42ODEyNyBMIDI1Niw3NzguMDMxMjUgMTQxLjQzNzUsNjYzLjQ2ODc1IGMgLTMuNjY2NzgsLTMuNjY0MjMgLTguODQ4MDEsLTUuNzY0NDIgLTE0LjAzMTI1LC01LjY4NzUgeiIgaWQ9InBhdGgzNzY2LTEiIHN0eWxlPSJmb250LXNpemU6bWVkaXVtO2ZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc3RyZXRjaDpub3JtYWw7dGV4dC1pbmRlbnQ6MDt0ZXh0LWFsaWduOnN0YXJ0O3RleHQtZGVjb3JhdGlvbjpub25lO2xpbmUtaGVpZ2h0Om5vcm1hbDtsZXR0ZXItc3BhY2luZzpub3JtYWw7d29yZC1zcGFjaW5nOm5vcm1hbDt0ZXh0LXRyYW5zZm9ybTpub25lO2RpcmVjdGlvbjpsdHI7YmxvY2stcHJvZ3Jlc3Npb246dGI7d3JpdGluZy1tb2RlOmxyLXRiO3RleHQtYW5jaG9yOnN0YXJ0O2Jhc2VsaW5lLXNoaWZ0OmJhc2VsaW5lO2NvbG9yOiMwMDAwMDA7ZmlsbDojMjIyMjIyO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDozOC44ODAwMDEwNzttYXJrZXI6bm9uZTt2aXNpYmlsaXR5OnZpc2libGU7ZGlzcGxheTppbmxpbmU7b3ZlcmZsb3c6dmlzaWJsZTtlbmFibGUtYmFja2dyb3VuZDphY2N1bXVsYXRlO2ZvbnQtZmFtaWx5OlNhbnM7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpTYW5zIi8+PC9nPjwvc3ZnPg==);
     background-size: contain;
-    background-color: white;
+    background-color: $orange;
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
