@@ -77,6 +77,15 @@ $colors: map-merge($colors, $addColors);
     background-size: contain;
 }
 
+.hero {
+  .hero-logo img {
+    overflow: hidden;
+    @include until($tablet) {
+      margin-top: -10em;
+    }
+  }
+}
+
 .bios {
   $padding: 360px;
 
@@ -198,9 +207,24 @@ $colors: map-merge($colors, $addColors);
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
+  }
+}
+
+.rotate:hover {
+  animation: rotate 200s linear infinite both;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
