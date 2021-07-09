@@ -1,4 +1,5 @@
 @charset "utf-8";
+@use "sass:math";
 
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 
@@ -94,7 +95,7 @@ $colors: map-merge($colors, $addColors);
   align-items: center;
   min-height: 80vh;
   overflow: hidden;
-  padding: $padding/2 0;
+  padding: math.div($padding, 2) 0;
   @include until($tablet) {
     flex-direction: column;
   }
@@ -108,9 +109,9 @@ $colors: map-merge($colors, $addColors);
     flex-direction: column;
     justify-content: center;
     &:first-child { 
-      margin-right: $padding/2; 
+      margin-right: math.div($padding, 2); 
       @include until($tablet)  {
-        margin: 0 0 $padding/2;
+        margin: 0 0 math.div($padding, 2);
       }
     }
     &::after {
@@ -214,7 +215,7 @@ $colors: map-merge($colors, $addColors);
   }
 }
 
-.rotate:hover {
+.rotate {
   animation: rotate 200s linear infinite both;
 }
 
