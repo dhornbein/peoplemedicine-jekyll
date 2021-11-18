@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>People Medicine</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,800;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
+---
+---
     
     <section class="hero is-fullheight has-background-black-ter">
       <div class="hero-body">
@@ -26,7 +16,7 @@
               <h2 class="subtitle is-4 has-text-warning">
                 regenerative design for people systems
               </h2>
-              <a href="mailto:Hello@peoplemedicine.org" class="has-text-success">hello@peoplemedicine.org</a>
+              <a href="mailto:{{ site.email }}" class="has-text-success">{{ site.email }}</a>
             </div>
           </div>
           
@@ -62,25 +52,8 @@
             <div class="column is-half">
               <div class="box">
                 <p>Let us help you make your teams more resilient and your work more regenerative for you, your organization and the people you serve.  </p>
-                <form
-                  action="https://buttondown.email/api/emails/embed-subscribe/people-medicine"
-                  method="post"
-                  target="popupwindow"
-                  onsubmit="window.open('https://buttondown.email/people-medicine', 'popupwindow')"
-                  class="embeddable-buttondown-form"
-                >
-                  <label class="label" for="bd-email">We’ll write to you:</label>
-                  <div class="field is-grouped is-flex-wrap-wrap">
-                    <p class="control is-expanded">
-                      <input type="email" name="email" id="bd-email" class="input" placeholder="Your email please"/>
-                    </p>
-                    <p class="control">
-                      <input class="button is-primary" type="submit" value="Subscribe" />
-                    </p>
-                  </div>
-                  <input type="hidden" value="1" name="embed" />
-                  <input type="hidden" name="tag" value="website" />
-                </form>
+                
+                {% include newsletter.html label="We’ll write to you:" %}
       
               </div>
             </div>
@@ -126,7 +99,7 @@
     <section class="section has-large-circle">
       <div>
         <p class="is-size-7 is-uppercase is-family-monospace">Talk to us</p>
-        <a href="mailto:Hello@peoplemedicine.org" class="is-size-4">hello@peoplemedicine.org</a>
+        <a href="mailto:{{ site.email }}" class="is-size-4">{{ site.email }}</a>
       </div>
     </section>
     
@@ -197,12 +170,8 @@
       
       <div class="container has-text-centered">
         
-        <a href="mailto:Hello@peoplemedicine.org"></a><img src="/img/web-logo-type-circle.svg" alt="People Medicine"></a>
+        <a href="mailto:{{ site.email }}"></a><img src="/img/web-logo-type-circle.svg" alt="People Medicine"></a>
         
       </div>
       
     </section>
-
-    <script type="text/javascript" src="lib/main.js"></script>
-  </body>
-</html>
