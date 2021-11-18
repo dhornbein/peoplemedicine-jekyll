@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$white-ter: #FFF8E7;
+$black-ter: #0D000D;
+
+$pink: #FF77F9;
+$pink-invert: #30102e;
+$orange: #FFA47F;
+$yellow: #F9E800;
+$green: #C3FF6F;
+$powder-green: #9FF297;
+$powder-green-invert: #2d462b;
+$cyan: #87FFDD;
+$baby-blue: #97F7FF;
+$baby-blue-invert: #254244;
+$blue: #35C7FF;
+$purple: #A992FF;
+$red: #FD4796;
+
+// Update the sans-serif font family
+$family-sans-serif: 'Nunito', sans-serif;
+
+$primary: $red;
+$link: $blue;
+$info: $cyan;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+$dark: $grey-darker;
+$text: $black-ter;
+
+$body-background-color: $white-ter;
+
+@import "../node_modules/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "pink":($pink, $pink-invert),
+  "orange":($orange, $orange-invert),
+  "yellow":($yellow, $yellow-invert),
+  "cyan":($cyan, $cyan-invert),
+  "blue":($blue, $blue-invert),
+  "purple":($purple, $purple-invert),
+  "red":($red, $red-invert),
+  "green":($green, $green-invert),
+  "green-light":($powder-green, $powder-green-invert),
+  "blue-light":($baby-blue, $baby-blue-invert)
+);
+$colors: map-merge($colors, $addColors);
