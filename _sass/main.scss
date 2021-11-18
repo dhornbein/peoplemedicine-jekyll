@@ -108,13 +108,16 @@ $colors: map-merge($colors, $addColors);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    * {
+      position: relative;
+    }
     &:first-child { 
       margin-right: math.div($padding, 2); 
       @include until($tablet)  {
         margin: 0 0 math.div($padding, 2);
       }
     }
-    &::after {
+    &::before {
       content: "";
       background-size: auto 80%;
       background-repeat: no-repeat;
@@ -130,11 +133,11 @@ $colors: map-merge($colors, $addColors);
       transform: scale(2.3);
     }
     &.bio--maria {
-      &::after { background-image: url(../img/web-bio-cirlce-teal.svg); }
+      &::before { background-image: url(../img/web-bio-cirlce-teal.svg); }
       color: $cyan;
     }
     &.bio--drew {
-      &::after { background-image: url(../img/web-bio-cirlce-orange.svg); }
+      &::before { background-image: url(../img/web-bio-cirlce-orange.svg); }
       color: $orange;
     }
     .title { color: inherit; }

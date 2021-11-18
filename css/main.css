@@ -13374,6 +13374,9 @@ a.has-text-blue-light:hover, a.has-text-blue-light:focus {
   flex-direction: column;
   justify-content: center;
 }
+.bios .bio * {
+  position: relative;
+}
 .bios .bio:first-child {
   margin-right: 180px;
 }
@@ -13382,7 +13385,7 @@ a.has-text-blue-light:hover, a.has-text-blue-light:focus {
     margin: 0 0 180px;
   }
 }
-.bios .bio::after {
+.bios .bio::before {
   content: "";
   background-size: auto 80%;
   background-repeat: no-repeat;
@@ -13398,13 +13401,13 @@ a.has-text-blue-light:hover, a.has-text-blue-light:focus {
 .bios .bio.bio--maria {
   color: #87FFDD;
 }
-.bios .bio.bio--maria::after {
+.bios .bio.bio--maria::before {
   background-image: url(../img/web-bio-cirlce-teal.svg);
 }
 .bios .bio.bio--drew {
   color: #FFA47F;
 }
-.bios .bio.bio--drew::after {
+.bios .bio.bio--drew::before {
   background-image: url(../img/web-bio-cirlce-orange.svg);
 }
 .bios .bio .title {
