@@ -14,12 +14,12 @@
 }
 
 .hero.has-bg-hands {
-    background: url(../img/pm_hands.png) no-repeat center center;
+    background: url(../assets/img/pm_hands.png) no-repeat center center;
     background-size: auto 800px;
     border-bottom: 1px solid #edd;
 }
 .hero.has-bg-hands-bottom {
-    background: url(../img/pm_hands_bottom.png) no-repeat center center;
+    background: url(../assets/img/pm_hands_bottom.png) no-repeat center center;
     background-size: contain;
 }
 
@@ -78,11 +78,11 @@
       transform: scale(2.3);
     }
     &.bio--maria {
-      &::before { background-image: url(../img/web-bio-cirlce-teal.svg); }
+      &::before { background-image: url(../assets/img/web-bio-cirlce-teal.svg); }
       color: $cyan;
     }
     &.bio--drew {
-      &::before { background-image: url(../img/web-bio-cirlce-orange.svg); }
+      &::before { background-image: url(../assets/img/web-bio-cirlce-orange.svg); }
       color: $orange;
     }
     .title { color: inherit; }
@@ -95,7 +95,7 @@
   $bottom-color: $green;
 
   background-image: 
-  url(../img/web-logo-circle-color-shape.png),
+  url(../assets/img/web-logo-circle-color-shape.png),
     linear-gradient(-179deg, $top-color, $top-color 25%, $bg-color 25.2%, $bg-color 75%, $bottom-color 75.2%, $bottom-color);
   
   background-color: $top-color;
