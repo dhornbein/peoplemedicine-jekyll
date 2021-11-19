@@ -1,0 +1,67 @@
+---
+main:
+  class: has-background-black-ter
+---
+
+<section class="hero is-fullheight">
+  <div class="hero-head p-2">
+    <h1 class="title has-text-white has-text-centered">Our Offerings</h1>
+  </div>
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <div class="columns is-multiline">
+        {%- for offering in site.offerings -%}
+        <div class="column is-flex is-one-third-tablet">
+          <a href="#{{ offering.slug }}" 
+          class="offering-button has-background-{{ offering.color }}">
+            <header><img src="{{ offering.icon }}" alt="{{ offering.title }}" style="max-height: 100px;"></header>
+            <h1 class="title has-text-black">{{ offering.title }}</h1>
+            <h2 class="subtitle">{{ offering.description }}</h2>
+          </a>
+        </div>
+        {%- endfor -%}
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-variable is-0-mobile is-1-tablet is-3-desktop is-centered">
+      <div class="column is-1-tablet is-2-mobile">
+        <ul class="sticky-nav">
+          {%- for offering in site.offerings -%}
+          <li>
+            <a href="#{{ offering.slug }}" class="sticky-item has-text-{{ offering.color }} has-background-{{ offering.color }}-mobile" style="background-image: url({{ offering.icon-color }});"></a>
+            <div class="sticky-flyout has-background-{{ offering.color }}">{{ offering.title }}</div>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="column is-narrow">
+        {%- for offering in site.offerings -%}
+        <section id="{{ offering.slug }}" class="section"> 
+          <div class="columns is-centered">
+            <article class="column is-readable-width">
+              <heading class="heading mb-2">
+                <h1 class="title has-text-{{ offering.color }}">{{ offering.title }}</h1>
+                <h2 class="subtitle has-text-white">
+                  {{ offering.description }}
+                </h2>
+              </heading>
+              <section class="content has-text-white">
+                {{ offering.content }}
+              </section>
+            </article>
+            <div class="column is-narrow">
+              <img src="{{ offering.icon-color }}" alt="{{ offering.title }} Icon" style="max-width: 200px;">
+            </div>
+          </div>
+        </section>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -32,6 +32,9 @@ $text: $black-ter;
 
 $body-background-color: $white-ter;
 
+$text-strong: inherit;
+$content-blockquote-background-color: transparent;
+
 @import "../node_modules/bulma/sass/utilities/derived-variables";
 $addColors: (
   "pink":($pink, $pink-invert),

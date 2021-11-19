@@ -12,7 +12,9 @@
   </head>
   <body>
     
-    {{ content }}
+    <main class="{{ page.main.class }}">
+      {{ content }}
+    </main>
 
     <script type="text/javascript" src="{{ base.url | prepend: site.url }}/assets/main.js"></script>
   </body>
