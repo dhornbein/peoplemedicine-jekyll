@@ -13,6 +13,7 @@ deliverables:
     - Meeting architecture handout
  - Insight and understanding about the real sources of tension and conflict in teams 
 order: 1
+date: 2021-11-01
 color: yellow
 ---
 

@@ -8,6 +8,7 @@ deliverables:
  - Participants understand how the tools for conflict transformation can be used as bridge building exercises to better prepare the group for conflict
  - Leave with some easy bridge building exercises to try
 order: 5
+date: 2021-11-05
 color: red
 ---
 

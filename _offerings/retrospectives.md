@@ -9,6 +9,7 @@ deliverables:
  - A toolkit of retrospective patterns to implement after projects or work sprints
  - Strategies that make these practices stick
 order: 2
+date: 2021-11-02
 color: orange
 ---
 

@@ -9,6 +9,7 @@ deliverables:
  - Come away with deep learning around how your own life lessons interweave with others’ experiences. 
  - "Especially for organizations: achieve significantly higher levels of embodied mutual trust in your team."
 order: 4
+date: 2021-11-04
 color: pink
 ---
 

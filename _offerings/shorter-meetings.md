@@ -9,6 +9,7 @@ deliverables:
  - Learn a simple tool for making the “implicit settings” of the meeting transparent to prevent confusion and support cognitive differences.
  - Gain real insight into why meetings are so draining and how to minimize friction and frustration. 
 order: 3
+date: 2021-11-03
 color: cyan
 ---
 

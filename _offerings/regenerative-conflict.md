@@ -5,6 +5,7 @@ icon: /assets/img/offerings/regenerative-conflict.png
 icon-color: /assets/img/offerings/regenerative-conflict-color.png
 deliverables: false
 order: 6
+date: 2021-11-06
 color: green
 ---
 
