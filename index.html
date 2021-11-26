@@ -127,58 +127,14 @@ nav: false
       </div>
     </section>
 
-    <section class="section is-medium content has-background-cyan mb-0">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-half">
-            <h2 class="title">Regenerative Business Structures</h2>
-            <ul>
-              <li>Shorter, more productive meetings that release people into higher-level workflow</li>
-              <li>Trust-building decision-making protocols that promote self-management and accountability</li>
-              <li>Tools for iterative improvement, so your teamwork gets more connected and resilient over time</li>
-              <li>Emotionally intelligent strategic planning that’s closely tuned in to your team’s deeper underlying needs</li>
-            </ul>
-          </div>
-          <div class="column is-half">
-            <img src="{{ base.url | prepend: site.url }}/assets/img/web-4-circles.svg" alt="">
-          </div>
-        </div>
+    <section class="hero is-fullheight has-background-black-ter">
+      <div class="hero-head mt-4">
+        <h1 class="title has-text-green has-text-centered is-uppercase">Offerings</h1>
       </div>
-    </section>
-    <section class="section is-medium content has-background-blue-light mb-0">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-half">
-            <img src="{{ base.url | prepend: site.url }}/assets/img/web-2-hands.svg" alt="">
-          </div>
-          <div class="column is-half">
-            <h2 class="title">Experiences that connect</h2>
-            <ul>
-              <li>Integrated tools and practices that build trust and safety in your teams, gently breaking down the scar tissue
-                that prevents even the most well-intentioned orgs from shifting away from white supremacy culture</li>
-              <li>Culture-shifting workshops that activate and cultivate the Relational Soil in your team (your organizational
-                “black gold,” terra preta)</li>
-              <li>A suite of connective experiences to invite wholeness and play intelligence into the workplace (e.g. Tarot
-                divination for science-minded materialists, Regenerative Relating games, organic story circles) </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-medium content has-background-green-light mb-0">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-half">
-            <h2 class="title">Hosting</h2>
-            <ul>
-              <li>Regenerative retreats</li>
-              <li>Relational Soil-building consulting and event design</li>
-              <li>Custom designed pathways at all scales</li>
-            </ul>
-          </div>
-          <div class="column is-half">
-            <img src="{{ base.url | prepend: site.url }}/assets/img/web-7-group.svg" alt="">
-          </div>
+      <div class="hero-body">
+        <div class="container has-text-white">
+          {%- capture offerings_url -%}{{ base.url | prepend: site.url }}/offerings/{%- endcapture -%}
+          {%- include offering-grid.html href=offerings_url -%}
         </div>
       </div>
     </section>

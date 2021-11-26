@@ -9,19 +9,7 @@ main:
   </div>
   <div class="hero-body">
     <div class="container has-text-white">
-      <div class="columns is-multiline">
-        {%- for offering in site.offerings -%}
-        <div class="column is-flex is-one-third-tablet">
-          <a href="#{{ offering.slug }}" 
-          class="offering-button has-background-{{ offering.color }}">
-            <header><img src="{{ offering.icon }}" alt="{{ offering.title }}" style="max-height: 100px;"></header>
-            <h1 class="title has-text-black">{{ offering.title }}</h1>
-            <h2 class="subtitle">{{ offering.description }}</h2>
-          </a>
-        </div>
-        {%- endfor -%}
-      </div>
-      
+      {%- include offering-grid.html -%}
     </div>
   </div>
 </section>
@@ -52,6 +40,24 @@ main:
               </heading>
               <section class="content has-text-white">
                 {{ offering.content }}
+                {%- if offering.deliverables -%}
+                <h2 class="title is-4">Deliverables</h2>
+                  <ul>
+                    {%- for deliverable in offering.deliverables -%}
+                      <li>
+                        {%- if deliverable.first -%}
+                        <ul>
+                          {%- for sub in deliverable -%}
+                          <li>{{ sub }}</li>
+                          {%- endfor -%}
+                        </ul>
+                        {%- else -%}
+                          {{ deliverable }}
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
               </section>
             </article>
             <div class="column is-narrow">
