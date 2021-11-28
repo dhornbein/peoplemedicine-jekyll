@@ -18,6 +18,24 @@
 
     <div class="navbar-end">
       {%- include nav-items.html items=site.data.nav.end -%}
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="mailto:{{ site.email }}">
+          Contact Us
+        </a>
+    
+        <div class="navbar-dropdown is-right">
+          <a class="navbar-item has-text-pink" href="mailto:{{ site.email }}">
+            💌 {{ site.email }}
+          </a>
+          <a class="navbar-item">
+            📆 Schedule Meeting
+          </a>
+          <a class="navbar-item" href="tel:7732703739">
+            📞 773-270-3739
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

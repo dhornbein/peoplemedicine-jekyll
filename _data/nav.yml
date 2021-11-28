@@ -15,6 +15,3 @@ start:
       type: collection
       collection: resources
 end:
-  -
-    url: /contact
-    title: Contact Us
