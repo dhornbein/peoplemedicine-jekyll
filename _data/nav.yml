@@ -1,0 +1,20 @@
+start:
+  -
+    url: /
+    title: Home
+  -
+    url: /offerings
+    title: Offerings
+    children:
+      type: collection
+      collection: offerings
+  - 
+    url: /resources
+    title: Resources
+    children:
+      type: collection
+      collection: resources
+end:
+  -
+    url: /contact
+    title: Contact Us

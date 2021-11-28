@@ -1,0 +1,49 @@
+{%- for item in include.items -%}
+    {%- if item.children -%}
+    <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link {% if page.url == item.url %}is-active{% endif %}"{%- if item.url -%} href="{{ item.url }}">{%- endif -%}
+        {{ item.title }}
+        </a>
+
+        <div class="navbar-dropdown">
+        {%- if item.children.type -%}
+            {%- case item.children.type -%}
+            {%- when "collection" -%}
+                {%- for child in site[item.children.collection] -%}
+                {%- if forloop.first -%}
+                <a class="navbar-item" href="{{ item.url }}">
+                    All {{ item.title }}
+                </a>
+                <hr class="navbar-divider">
+                {%- endif -%}
+                <a class="navbar-item {% if page.url == child.url %}is-active{% endif %}" href="{{ child.url }}">
+                {%- if child.icon -%}
+                <figure class="image is-24x24 mr-1">
+                    <img src="{{ child.icon }}">
+                </figure>
+                {%- endif -%}
+                {{ child.title }}
+                </a>
+                {%- endfor -%}
+            {%- else -%}
+                
+            {%- endcase -%}
+        {%- else -%}
+            {%- for child in item.children -%}
+            {%- if child.url -%}
+                <a class="navbar-item {% if page.url == child.url %}is-active{% endif %}" href="{{ child.url }}">
+                {{ child.title }}
+                </a>
+            {%- else -%}
+                <hr class="navbar-divider">
+            {%- endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+        </div>
+    </div>
+    {%- else -%}
+    <a class="navbar-item {% if page.url == item.url %}is-active{% endif %}" href="{{ item.url }}">
+        {{ item.title }}
+    </a>
+    {%- endif -%}
+    {%- endfor -%}

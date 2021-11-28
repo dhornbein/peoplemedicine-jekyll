@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{ base.url | prepend: site.url }}/css/main.css">
   </head>
   <body>
+
+    {%- if page.nav != false -%}
+      {%- include nav.html -%}
+    {%- endif -%}
     
     <main class="{{ page.main.class }}">
       {{ content }}
