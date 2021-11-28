@@ -1,0 +1,36 @@
+---
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Our Resources</h1>
+    {%- for resource in site.resources -%}
+    <div class="is-flex">
+        <header>
+          {%- include resource-thumbnail.html size="200" file=resource.file href=resource.url alt=resource.title -%}
+        </header>
+        <main class="ml-4 is-flex is-flex-direction-column is-justify-content-center">
+          <h1 class="title has-text-black">{{ resource.title }}</h1>
+          <h2 class="subtitle">{{ resource.description }}</h2>
+          <a href="{{ resource.url }}">Learn more...</a>
+          {%- if resource.links -%}
+            <div class="buttons">
+              {%- for link in resource.links -%}
+              <a href="{{ link.href }}" class="button is-small {{ link.class }}" {%- if link.target -%}target="{{ link.target }}"{%- endif -%}>{{ link.text }}</a>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          {%- if resource.tags -%}
+            <div class="tags">
+              {%- for tag in resource.tags -%}
+                <span class="tag is-white">{{ tag | strip }}</span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          
+        </main>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+

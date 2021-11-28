@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section class="section">
+  <div class="container is-fullhd">
+    <div class="columns">
+      <div class="column is-narrow">
+        {%- assign imgAltText = resource.title | prepend: "picture of " -%}
+        {%- assign imgHref = page.links[download].href -%}
+        {%- include resource-thumbnail.html size="400" file=page.file href=imgHref alt=imgAltText -%}
+        <hr>
+        {%- if page.links -%}
+        <div class="buttons">
+          {%- for link in page.links -%}
+          <a href="{{ link.href }}" class="button is-small {{ link.class }}" {%- if link.target -%}target="{{ link.target }}"
+            {%- endif -%}>{{ link.text }}</a>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+        {%- if page.tags -%}
+        <div class="tags">
+          {%- for tag in page.tags -%}
+          <span class="tag is-white">{{ tag | strip }}</span>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="column">
+        <h1 class="title">{{ page.title }}</h1>
+        <h2 class="subtitle">{{ page.description }}</h2>
+        <hr>
+        {{ content }}
+      </div>
+
+  </div>
+</section>

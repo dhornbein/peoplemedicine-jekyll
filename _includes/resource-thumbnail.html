@@ -1,0 +1,29 @@
+{%- assign class = include.class | append: " has-drop-shadow" -%}
+{%- assign size = include.size | default: "320" -%}
+
+{%- comment -%}
+If the file object contains a google doc ID (gdocId) and doesn't have a thumbnail, setup a google doc thumbnail link
+{%- endcomment -%}
+
+{%- if include.file.gdocId && !include.file.thumbnail -%}
+    {%- assign noSize = true -%}
+    {%- capture src -%}
+        {%- include gdoc-thumbnail.html size=size id=include.file.gdocId alt=include.alt -%}
+    {%- endcapture -%}
+{%- else -%}
+    {%- assign src = include.file.thumbnail -%}
+{%- endif -%}
+
+{%- capture img -%}
+<img src="{{ src }}" alt="{{ include.alt }}" class="{{ class }}"{%- if !noSize -%} width="{{size}}"{%- endif -%}>
+{%- endcapture -%}
+
+{%- if include.href -%}
+    <a href="{{ include.href }}">
+        {{ img }}
+    </a>
+{%- else -%}
+    <figure>
+        {{ img }}
+    </figure>
+{%- endif -%}

@@ -6,6 +6,10 @@ html {
   border-radius: 4px;
 }
 
+.has-drop-shadow {
+  box-shadow: 2px 2px 6px #0005;
+}
+
 .is-readable-width {
   max-width: 65ch;
 }
