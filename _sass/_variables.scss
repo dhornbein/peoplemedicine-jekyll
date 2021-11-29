@@ -53,6 +53,8 @@ $navbar-colors: (
   "black-ter":($black-ter,$white-ter)
 );
 
+$hr-background-color: darken($white-ter,20%);
+
 // navbar
 
 // $navbar-dropdown-background-color: $baby-blue;
