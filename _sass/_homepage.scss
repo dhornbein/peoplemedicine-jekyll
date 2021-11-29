@@ -1,0 +1,14 @@
+#home-canvas {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+    cursor: crosshair;
+}
+
+#home-hero {
+    a {
+        z-index: 2;
+        position: relative;
+    }
+}
