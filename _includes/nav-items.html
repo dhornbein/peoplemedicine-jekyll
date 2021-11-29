@@ -5,7 +5,7 @@
         {{ item.title }}
         </a>
 
-        <div class="navbar-dropdown">
+        <div class="navbar-dropdown is-hidden-mobile">
         {%- if item.children.type -%}
             {%- case item.children.type -%}
             {%- when "collection" -%}
