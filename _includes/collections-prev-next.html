@@ -1,0 +1,25 @@
+{% capture the_collection %}{{ page.collection }}{% endcapture %}
+
+{% if page.collection %}
+  {% assign document = site[the_collection] %}
+{% endif %}
+
+{% for links in document %}
+  {% if links.title == page.title %}
+    {% unless forloop.first %}
+      {% assign prevurl = prev.url %}
+      {% assign prevtitle = prev.title %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next = document[forloop.index] %}
+      {% assign nexttitle = next.title %}
+      {% assign nexturl = next.url %}
+    {% endunless %}
+  {% endif %}
+  {% assign prev = links %}
+{% endfor %}
+<hr>
+<div class="columns">
+  <div class="column">{% if prevurl %}<a href="{{ prevurl }}">Previous: {{ prevtitle l}}</a>{% endif %}</div>
+  <div class="column has-text-right">{% if nexturl %}<a href="{{ nexturl }}">Next: {{ nexttitle }}</a>{% endif %}</div>
+</div>

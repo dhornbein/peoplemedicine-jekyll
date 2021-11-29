@@ -7,21 +7,21 @@ redirect_from: /resources
   <div class="container">
     <h1 class="title">Our Resources</h1>
     {%- for resource in site.resources -%}
-    <div class="is-flex">
-        <header>
+    <div class="resource is-flex mb-4">
+        <figure>
           {%- include resource-thumbnail.html size="200" file=resource.file href=resource.url alt=resource.title -%}
-        </header>
+        </figure>
         <main class="ml-4 is-flex is-flex-direction-column is-justify-content-center">
-          <h1 class="title has-text-black">{{ resource.title }}</h1>
+          <h1 class="title has-text-black"><a href="{{ resource.url }}">{{ resource.title }}</a></h1>
           <h2 class="subtitle">{{ resource.description }}</h2>
-          <a href="{{ resource.url }}">Learn more...</a>
-          {%- if resource.links -%}
-            <div class="buttons">
+          <div class="buttons mb-0">
+            <a href="{{ resource.url }}" class="button is-outlined is-link">Learn more...</a>
+            {%- if resource.links -%}
               {%- for link in resource.links -%}
-              <a href="{{ link.href }}" class="button is-small {{ link.class }}" {%- if link.target -%}target="{{ link.target }}"{%- endif -%}>{{ link.text }}</a>
+              <a href="{{ link[1].href }}" class="button {{ link[1].class }}" {%- if link[1].target -%}target="{{ link[1].target }}"{%- endif -%}>{{ link[1].text }}</a>
               {%- endfor -%}
-            </div>
-          {%- endif -%}
+            {%- endif -%}
+          </div>
           {%- if resource.tags -%}
             <div class="tags">
               {%- for tag in resource.tags -%}

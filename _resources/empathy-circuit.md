@@ -1,23 +1,23 @@
 ---
 title: The Empathy Circuit
-description: One pager
+description: A tool for gently breaking the ice on unspoken resentments that weaken trust bonds between friends, family and coworkers.
 
 file:
   type: google/pdf
   gdocId: 1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
-  thumbnail: https://drive.google.com/thumbnail?authuser=0&sz=w320&id=1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
 
 links:
-  - view:
-    type: google/doc
-    text: View
-    href: https://drive.google.com/file/d/1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH/view
-  - download:
+  download:
     type: google/doc
     text: Download PDF
     class: is-primary
     href: https://drive.google.com/uc?export=download&id=1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
-  - edit:
+  view:
+    type: google/doc
+    text: View
+    href: https://drive.google.com/file/d/1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH/view
+    target: _blank
+  edit:
     type: google/doc
     text: View Source
     href: https://docs.google.com/document/d/1lWxM3kXCLvEcbHNNmS5UFFfx2FpvQ_V8kKugdnSs4J8/edit
@@ -42,6 +42,13 @@ citations:
  - active listening session
 ---
 
-The Empathy Circuit is a method for surfacing tensions and making requests within a group.
+This is an empathy-first, NVC-inspired tool to help you quickly and safely surface issues that have been weakening trust, so they don’t build up into unspoken resentments.
 
-{% include gdoc-thumbnail.html img=true href=page.links.download.href size=800 id=page.file.gdocId alt="picture of the empathy curcuit one pager" %}
+We invite empathy by sharing the deeply-held values and needs behind our tensions while temporarily holding back on the specifics of our complaint (as a first step in preparation for going deeper, once trust has been built through empathetic listening).
+
+The circuit works by using a strong filter (general and positive language only) to protect the listener from feeling blame and to invite them to hear us in light of our values and needs. 
+
+It has three parts: Structured Statements, Trust-Sized Requests, and Mirroring.
+
+
+{% include gdoc-thumbnail.html img=true href=page.links.download.href size=800 id=page.file.gdocId alt="picture of the empathy circuit one pager" %}

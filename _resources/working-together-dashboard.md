@@ -15,21 +15,22 @@ file:
 # https://docs.google.com/document/d/[ID]/copy
 
 links:
-  - view:
-    type: google/doc
-    text: View
-    href: https://docs.google.com/document/d/1Qbvp-LrIlUqpeiQX4rpUewjiG_u5-nzTRw3ZAfgZtMU/preview
-  - copy:
+  copy:
     type: google/doc
     text: Copy Template
     class: is-primary
     href: https://docs.google.com/document/d/1Qbvp-LrIlUqpeiQX4rpUewjiG_u5-nzTRw3ZAfgZtMU/template/preview
     target: _blank
-  - download:
+  view:
+    type: google/doc
+    text: View
+    href: https://docs.google.com/document/d/1Qbvp-LrIlUqpeiQX4rpUewjiG_u5-nzTRw3ZAfgZtMU/preview
+    target: _blank
+  download:
     type: google/doc
     text: Download PDF
     href: https://docs.google.com/document/d/1Qbvp-LrIlUqpeiQX4rpUewjiG_u5-nzTRw3ZAfgZtMU/export?format=pdf
-  - edit:
+  edit:
     type: google/doc
     text: Edit/Comment
     href: https://docs.google.com/document/d/1Qbvp-LrIlUqpeiQX4rpUewjiG_u5-nzTRw3ZAfgZtMU/edit
@@ -39,19 +40,18 @@ links:
 internal: true
 
 author:
-  name: People Medicine
-  email: hello@peoplemedicine.org
+  name: Drew Hornbein
+  email: drew@peoplemedicine.org
   url: https://peoplemedicine.org
 
 # the course this resource belongs to
-course: Overculture Serise
+course: Overculture Series
 category:
 # list of tags (separated by spaces)
 tags: dashboard teams norms
 # list of citations and related resources
 citations:
- - adapted from [strengthaning teams](https://docs.google.com/document/d/1YYG3ha-TpoGck7e8z3hdg-pF4kTiqUl0epjqgaAhrwk/edit)
+ - adapted from [strengthening teams](https://docs.google.com/document/d/1YYG3ha-TpoGck7e8z3hdg-pF4kTiqUl0epjqgaAhrwk/edit)
  - active listening session
 ---
 
-Hell yeah!

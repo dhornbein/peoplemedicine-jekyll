@@ -5,16 +5,16 @@ layout: default
 <section class="section">
   <div class="container is-fullhd">
     <div class="columns">
-      <div class="column is-narrow">
+      <div class="column is-one-quarter">
         {%- assign imgAltText = resource.title | prepend: "picture of " -%}
-        {%- assign imgHref = page.links[download].href -%}
+        {%- assign imgHref = page.links.download.href | default: false -%}
         {%- include resource-thumbnail.html size="400" file=page.file href=imgHref alt=imgAltText -%}
         <hr>
         {%- if page.links -%}
         <div class="buttons">
           {%- for link in page.links -%}
-          <a href="{{ link.href }}" class="button is-small {{ link.class }}" {%- if link.target -%}target="{{ link.target }}"
-            {%- endif -%}>{{ link.text }}</a>
+          <a href="{{ link[1].href }}" class="button {{ link[1].class }}" {%- if link[1].target -%}target="{{ link[1].target }}"
+            {%- endif -%}>{{ link[1].text }}</a>
           {%- endfor -%}
         </div>
         {%- endif -%}
@@ -26,12 +26,31 @@ layout: default
         </div>
         {%- endif -%}
       </div>
-      <div class="column">
-        <h1 class="title">{{ page.title }}</h1>
-        <h2 class="subtitle">{{ page.description }}</h2>
-        <hr>
-        {{ content }}
-      </div>
+      <article class="column">
+        <header>
+          <nav class="breadcrumb has-succeeds-separator is-small mb-2" aria-label="breadcrumbs">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/r">Resources</a></li>
+              <li class="is-active"></li>
+            </ul>
+          </nav>
+          <h1 class="title">{{ page.title }}</h1>
+          <h2 class="subtitle">{{ page.description }}</h2>
+          <div class="byline is-size-7">
+            <address class="is-inline">
+              By <a href="{{ page.author.url }}" rel="author">{{ page.author.name }}</a> 
+              ({%- if page.author.email -%}<a href="mailto:{{ page.author.email }}">💌 Email</a>{%- endif -%})
+            </address>
+            on <time pubdate datetime="{{ page.date | date: '%F'}}" title="{{ page.date | date: '%B %d, %Y' }}">{{ page.date | date: '%D' }}</time>
+          </div>
+          <hr>
+        </header>
+        <div class="content is-readable-width">{{ content }}</div>
+        <footer>
+          {%- include collections-prev-next.html -%}
+        </footer>
+      </article>
 
   </div>
 </section>
