@@ -49,3 +49,16 @@ $addColors: (
   "blue-light":($baby-blue, $baby-blue-invert)
 );
 $colors: map-merge($colors, $addColors);
+$navbar-colors: (
+  "black-ter":($black-ter,$white-ter)
+);
+
+// navbar
+
+// $navbar-dropdown-background-color: $baby-blue;
+// $navbar-dropdown-arrow: $baby-blue;
+// $navbar-dropdown-item-hover-color: ;
+// $navbar-dropdown-item-hover-background-color: ;
+// $navbar-dropdown-item-active-color: ;
+// $navbar-dropdown-item-active-background-color: $red;
+// $navbar-divider-background-color: ;
