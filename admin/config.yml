@@ -1,7 +1,9 @@
+local_backend: true
 backend:
   name: github
   repo: dhornbein/peoplemedicine.org
   branch: master # Branch to update (optional; defaults to master)
+  # https://cnly.github.io/2018/04/14/just-3-steps-adding-netlify-cms-to-existing-github-pages-site-within-10-minutes.html
   site_domain: musing-colden-e44624.netlify.app
 # publish_mode: editorial_workflow
 media_folder: "assets/uploads"
@@ -13,8 +15,109 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      # - {label: "Cat", name: "gdoc", widget: "gdoc"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Categories", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Internal Work?", name: "internal", widget: "boolean", required: false}
+      - label: "Authors"
+        name: "author"
+        widget: list
+        summary: '{{fields.name}}: {{fields.email}}'
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "email", name: "email", widget: "string"}
+          - {label: "Website", name: "url", widget: "string"}
+      - label: File # details about the file
+        name: file
+        widget: object
+        summary: '{{field.label}}'
+        fields:
+          - {label: "Google Doc Link", name: "gdoc", widget: "gdoc", required: false }
+          - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false, hint: Google Docs will automatically generate thumbnails}
+          - {label: "Upload File", name: "url", widget: "file", required: false}
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        summary: '{{fields.type}}: {{fields.text}}'
+        types:
+          - label: 'Basic Link'
+            name: 'basic'
+            widget: object
+            summary: '{{fields.header}}'
+            fields:
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Link URL", name: "href", widget: "string",hint: For Google docs, simply add the URL from the document}
+              - label: "Link Behavior"
+                name: "target"
+                widget: select
+                required: false
+                options:
+                  - { label: "Same", value: "" }
+                  - { label: "New", value: "_blank" }
+              - label: "CSS Class"
+                name: "class"
+                widget: "select"
+                multiple: true
+                required: false
+                options:
+                  - { label: "Primary Color", value: "is-primary" }
+                  - { label: "Blue", value: "is-info" }
+                  - { label: "Yellow", value: "is-warning" }
+                  - { label: "Green", value: "is-success" }
+                  - { label: "red", value: "is-danger" }
+                  - { label: "Lightened", value: "is-light" }
+                  - { label: "Outlined", value: "is-outlined" }
+                  - { label: "Inverted", value: "is-inverted" }
+          - label: 'Google Link'
+            name: 'gdoc'
+            widget: object
+            summary: '{{fields.handler}}'
+            fields:
+              - label: "Type"
+                name: "handler"
+                widget: select
+                default: gdoc
+                hint: What kind of Google link is this?
+                options: 
+                  - { label: Google Doc, value: gdoc}
+                  - { label: Preview Google Doc, value: gdoc_preview}
+                  - { label: Template Google Doc, value: gdoc_template}
+                  - { label: Copy Google Doc, value: gdoc_copy}
+                  - { label: Download Google Doc as PDF, value: gdoc_pdf}
+                  - { label: View Google Drive File, value: gdoc_view}
+                  - { label: Download Google Drive File, value: gdoc_download}
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "URL", name: "href", widget: "hidden", default: false}
+              - {label: "Link URL", name: "link", widget: "gdoc",hint: paste the document share link here}
+              - label: "Link Behavior"
+                name: "target"
+                widget: select
+                required: false
+                options:
+                  - { label: "Same", value: "" }
+                  - { label: "New", value: "_blank" }
+              - label: "CSS Class"
+                name: "class"
+                widget: "select"
+                multiple: true
+                required: false
+                options:
+                  - { label: "Primary Color", value: "is-primary" }
+                  - { label: "Blue", value: "is-info" }
+                  - { label: "Yellow", value: "is-warning" }
+                  - { label: "Green", value: "is-success" }
+                  - { label: "red", value: "is-danger" }
+                  - { label: "Lightened", value: "is-light" }
+                  - { label: "Outlined", value: "is-outlined" }
+                  - { label: "Inverted", value: "is-inverted" }
+      - label: "Citations"
+        name: "citations"
+        widget: "list"
+        required: false
+        summary: '{{field.value}}'
+        field: {label: Text, name: "text", widget: text}
+      - {label: "License", name: "license", widget: "string", required: false}

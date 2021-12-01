@@ -8,5 +8,65 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    var GoogleDocControl = createClass({
+      handleChange: function(e) {
+        var input = e.target.value;
+        // if id is present, use it
+        var id = input.match(/d\/([^/]*)/);
+        if (id) {
+          id = id[1];
+        } else {
+          id = false
+        }
+        
+        this.props.onChange(e.target.value = { 'url': input, 'id': id } );
+
+      },
+
+      // isValid: function() {
+        
+      //   // is this.props.value an array?
+      //   input = Array.isArray(this.props.value) ? this.props.value : '';
+      //   // is input a valid url?
+      //   var url = input.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
+
+      //   return url ? true : { error: { message: 'Your error message.' } };
+      // },
+    
+      render: function() {
+        // if this.props.value is an array
+        console.log('rendering',this.props.value);
+        var value = (typeof this.props.value === 'object') ? this.props.value.url : '';
+
+        return h('input', {
+          id: this.props.forID,
+          className: this.props.classNameWrapper,
+          type: 'text',
+          value: value,
+          onChange: this.handleChange,
+        });
+      },
+    });
+    
+    var GoogleDocPreivew = createClass({
+      render: function() {
+        if (typeof this.props.value !== 'object' || !this.props.value.url) return null;
+
+        return h('ul', {},
+          h('li',{},'url: ' + this.props.value.url),
+          h('li',{},'id: ' + this.props.value.id)
+        );
+      }
+    });
+    
+    var schema = {
+      properties: {
+        // value: new Map()
+      },
+    }
+    
+    CMS.registerWidget('gdoc', GoogleDocControl, GoogleDocPreivew, schema);
+    </script>
 </body>
 </html>
