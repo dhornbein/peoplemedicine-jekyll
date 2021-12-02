@@ -10,32 +10,19 @@ author:
   - name: People Medicine
     email: hello@peoplemedicine.org
     url: https://peoplemedicine.org
+file:
+  gdocId: 1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
 links:
-  - type: gdoc
-    handler: gdoc_pdf
-    href: false
-    text: Download PDF
-    link:
-      url: https://drive.google.com/file/d/1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH/view
-      id: 1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
+  - text: Download PDF
+    href: https://drive.google.com/uc?export=download&id=1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
     target: _blank
     class:
       - is-primary
-  - type: gdoc
-    handler: gdoc_view
-    href: false
-    text: View
-    link:
-      url: https://drive.google.com/file/d/1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH/view
-      id: 1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH
+  - text: View
+    href: https://drive.google.com/file/d/1mNl2h9c1ClHCeDq2P5h7dn5i8gRtbMOH/view
     target: _blank
-  - type: gdoc
-    handler: gdoc
-    href: false
-    text: View Source
-    link:
-      url: https://docs.google.com/document/d/1lWxM3kXCLvEcbHNNmS5UFFfx2FpvQ_V8kKugdnSs4J8/edit
-      id: 1lWxM3kXCLvEcbHNNmS5UFFfx2FpvQ_V8kKugdnSs4J8
+  - text: View Source
+    href: https://docs.google.com/document/d/1lWxM3kXCLvEcbHNNmS5UFFfx2FpvQ_V8kKugdnSs4J8/edit
     target: _blank
 citations:
   - adapted from [strengthaning
@@ -53,4 +40,4 @@ The circuit works by using a strong filter (general and positive language only) 
 It has three parts: Structured Statements, Trust-Sized Requests, and Mirroring.
 
 
-{% include gdoc-thumbnail.html img=true href=page.links[0].href size=800 id=page.file.gdocId alt="picture of the empathy circuit one pager" %}
+{% include gdoc-thumbnail.html img=true href=page.links size=800 id=page.file.gdocId alt="picture of the empathy circuit one pager" %}

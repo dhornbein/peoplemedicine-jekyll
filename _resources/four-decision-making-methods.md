@@ -1,40 +1,27 @@
 ---
 title: 4 Decision Making Methods
-description: Brief overview of consensus, consent, advice, and mandate decision making methods for groups
-# https://drive.google.com/open?id=1n-9jSTQc8W77WS8i3y70vXWqATQHPb0P&authuser=drew%40dhornbein.com&usp=drive_fs
+description: Brief overview of consensus, consent, advice, and mandate decision
+  making methods for groups
+date: 2021-12-02T06:06:24.207Z
+category: null
+tags: decisions team advice-process mandate consent consensus print
+internal: false
+author:
+  - name: The Hum
+    email: hello@thehum.org
+    url: https://thehum.org
 file:
   type: google/pdf
   gdocId: 1n-9jSTQc8W77WS8i3y70vXWqATQHPb0P
-
 links:
-  download:
-    type: google/doc
-    text: Download PDF
-    class: is-primary
+  - text: Download PDF
     href: https://drive.google.com/uc?export=download&id=1n-9jSTQc8W77WS8i3y70vXWqATQHPb0P
-  view:
-    type: google/doc
-    text: View
-    href: https://drive.google.com/file/d/1n-9jSTQc8W77WS8i3y70vXWqATQHPb0P/view
     target: _blank
-
-# bool, is this an internal resource?
-internal: false
-
-author:
-  name: The Hum
-  email: hello@thehum.org
-  url: https://thehum.org
-
-# the course this resource belongs to
-course: decision making
-category:
-# list of tags (separated by spaces)
-tags: decisions team advice-process mandate consent consensus print
-# list of citations and related resources
+    class:
+      - is-primary
 citations: false
-
 license: CC-BY-SA
+course: decision making
 ---
 
 ## Consensus
