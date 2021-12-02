@@ -1,0 +1,30 @@
+{%- assign class = include.class -%}
+{%- assign size  = include.size | default: "320" -%}
+{%- assign alt   = include.alt -%}
+{%- assign href  = include.href -%}
+{%- assign file  = include.file | default: page.file -%}
+{%- assign src   = include.src | default: page.file.thumbnail -%}
+
+{%- comment -%}
+If the file object contains a google doc ID (gdocId) and doesn't have a thumbnail, setup a google doc thumbnail link
+{%- endcomment -%}
+
+{%- if file.gdocId && !file.thumbnail -%}
+    {%- assign src = size | prepend: "https://drive.google.com/thumbnail?authuser=0&sz=w" | append: "&id=" | append: file.gdocId -%}
+{%- elsif file.thumbnail -%}
+    {%- assign src = file.thumbnail -%}
+{%- endif -%}
+
+{%- capture img -%}
+    <img src="{{ src }}" alt="{{ alt }}" class="{{ class }}">
+{%- endcapture -%}
+
+{%- if href -%}
+    <a href="{{ href }}" title="{{ alt }}">
+        {{ img }}
+    </a>
+{%- else -%}
+    <figure>
+        {{ img }}
+    </figure>
+{%- endif -%}

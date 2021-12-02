@@ -6,15 +6,14 @@ layout: default
   <div class="container is-fullhd">
     <div class="columns">
       <div class="column is-one-quarter">
-        {%- assign imgAltText = resource.title | prepend: "picture of " -%}
-        {%- assign imgHref = page.links.download.href | default: false -%}
-        {%- include resource-thumbnail.html size="400" file=page.file href=imgHref alt=imgAltText -%}
+        {%- assign imgAltText = page.title | prepend: "picture of " -%}
+        {%- assign imgHref = page.links[0].href | default: false -%}
+        {%- include thumbnail.html class="has-drop-shadow" size="600" file=page.file href=imgHref alt=imgAltText -%}
         <hr>
         {%- if page.links -%}
         <div class="buttons">
           {%- for link in page.links -%}
-          <a href="{{ link[1].href }}" class="button {{ link[1].class }}" {%- if link[1].target -%}target="{{ link[1].target }}"
-            {%- endif -%}>{{ link[1].text }}</a>
+          <a href="{{ link.href }}" class="button {{ link.class | join: ' ' }} }}" {%- if link.target -%}target="{{ link.target }}"{%- endif -%}>{{ link.text }}</a>
           {%- endfor -%}
         </div>
         {%- endif -%}
@@ -38,10 +37,7 @@ layout: default
           <h1 class="title">{{ page.title }}</h1>
           <h2 class="subtitle">{{ page.description }}</h2>
           <div class="byline is-size-7">
-            <address class="is-inline">
-              By <a href="{{ page.author.url }}" rel="author">{{ page.author.name }}</a> 
-              ({%- if page.author.email -%}<a href="mailto:{{ page.author.email }}">💌 Email</a>{%- endif -%})
-            </address>
+            {% include byline.html authors=page.author %}
             on <time pubdate datetime="{{ page.date | date: '%F'}}" title="{{ page.date | date: '%B %d, %Y' }}">{{ page.date | date: '%D' }}</time>
           </div>
           <hr>

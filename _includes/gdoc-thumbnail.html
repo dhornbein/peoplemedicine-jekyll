@@ -1,15 +1,19 @@
 {%- assign id = include.id -%}
 {%- assign size = include.size | default: 320 -%}
 {%- assign alt = include.alt -%}
+{%- assign outputImg = include.img | default: false -%}
 {%- capture gdocSize -%}
     w{{ size }}
 {%- endcapture -%}
+
 {%- assign src = gdocSize | prepend: "https://drive.google.com/thumbnail?authuser=0&sz=" | append: "&id=" | append: id -%}
-{%- if include.img -%}
+
+{%- if ouputImg -%}
     {%- capture img -%}<img src="{{ src }}" alt="{{ alt }}">{%- endcapture -%}
 {%- else -%}
     {%- capture img -%}{{ src }}{%- endcapture -%}
 {%- endif -%}
+
 {%- if include.href -%}
     <a href="{{ include.href }}">
         {{ img }}

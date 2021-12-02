@@ -7,30 +7,34 @@ redirect_from: /r
   <div class="container">
     <h1 class="title">Our Resources</h1>
     {%- for resource in site.resources -%}
-    <div class="resource is-flex mb-4">
-        <figure>
-          {%- include resource-thumbnail.html size="200" file=resource.file href=resource.url alt=resource.title -%}
-        </figure>
-        <main class="ml-4 is-flex is-flex-direction-column is-justify-content-center">
-          <h1 class="title has-text-black"><a href="{{ resource.url }}">{{ resource.title }}</a></h1>
-          <h2 class="subtitle">{{ resource.description }}</h2>
-          <div class="buttons mb-0">
-            <a href="{{ resource.url }}" class="button is-outlined is-link">Learn more...</a>
-            {%- if resource.links -%}
-              {%- for link in resource.links -%}
-              <a href="{{ link[1].href }}" class="button {{ link[1].class }}" {%- if link[1].target -%}target="{{ link[1].target }}"{%- endif -%}>{{ link[1].text }}</a>
-              {%- endfor -%}
-            {%- endif -%}
+    <div class="resourcemb-4">
+        <div class="columns">
+          <div class="column is-narrow">
+            <figure>
+              {%- include thumbnail.html class="has-drop-shadow" size="200" file=resource.file href=resource.url alt=resource.title -%}
+            </figure>
           </div>
-          {%- if resource.tags -%}
-            <div class="tags">
-              {%- for tag in resource.tags -%}
-                <span class="tag is-white">{{ tag | strip }}</span>
-              {%- endfor -%}
+          <main class="column ml-4 is-flex is-flex-direction-column is-justify-content-center">
+            <h1 class="title has-text-black"><a href="{{ resource.url }}">{{ resource.title }}</a></h1>
+            <h2 class="subtitle">{{ resource.description }}</h2>
+            <div class="buttons mb-0">
+              <a href="{{ resource.url }}" class="button is-outlined is-link">Learn more...</a>
+              {%- if resource.links -%}
+                {%- for link in resource.links -%}
+                <a href="{{ link.href }}" class="button {{ link.class | join: ' ' }} }}" {%- if link.target -%}target="{{ link.target }}"{%- endif -%}>{{ link.text }}</a>
+                {%- endfor -%}
+              {%- endif -%}
             </div>
-          {%- endif -%}
+            {%- if resource.tags -%}
+              <div class="tags">
+                {%- for tag in resource.tags -%}
+                  <span class="tag is-white">{{ tag | strip }}</span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
           
-        </main>
+          </main>
+        </div>
     </div>
     {%- endfor -%}
   </div>

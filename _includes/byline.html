@@ -1,0 +1,18 @@
+{%- assign authors = include.authors | default: false -%}
+
+  
+{%- if authors -%}
+<address class="is-inline">By 
+  {%- for author in authors -%}
+    {% if forloop.index > 1 %}, {% endif %}
+    {% if forloop.last and forloop.index > 1 %} and {% endif %}
+
+    {%- if author.url -%}
+    <a href="{{ author.url }}" rel="author">{{ author.name }}</a> 
+    {%- else -%}
+      {{ author.name }}
+    {%- endif -%}
+    {% if author.email %} <a href="mailto:{{ author.email }}" title="Send {{ author.name }} an email">💌 </a>{% endif %}
+  {%- endfor -%}
+</address>
+{%- endif -%}

@@ -19,6 +19,9 @@ links:
     target: _blank
     class:
       - is-primary
+  - text: View
+    href: https://drive.google.com/file/d/1n-9jSTQc8W77WS8i3y70vXWqATQHPb0P/view
+    target: _blank
 citations: false
 license: CC-BY-SA
 course: decision making

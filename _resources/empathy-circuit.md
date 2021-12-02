@@ -25,8 +25,7 @@ links:
     href: https://docs.google.com/document/d/1lWxM3kXCLvEcbHNNmS5UFFfx2FpvQ_V8kKugdnSs4J8/edit
     target: _blank
 citations:
-  - adapted from [strengthaning
-    teams](https://docs.google.com/document/d/1YYG3ha-TpoGck7e8z3hdg-pF4kTiqUl0epjqgaAhrwk/edit)
+  - adapted from [strengthening teams](https://docs.google.com/document/d/1YYG3ha-TpoGck7e8z3hdg-pF4kTiqUl0epjqgaAhrwk/edit)
   - active listening session
 course: trust building
 ---
@@ -39,5 +38,4 @@ The circuit works by using a strong filter (general and positive language only) 
 
 It has three parts: Structured Statements, Trust-Sized Requests, and Mirroring.
 
-
-{% include gdoc-thumbnail.html img=true href=page.links size=800 id=page.file.gdocId alt="picture of the empathy circuit one pager" %}
+{% include thumbnail.html class="has-drop-shadow" href=page.links.first.href size=800 alt="picture of the empathy circuit one pager" %}
