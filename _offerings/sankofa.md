@@ -4,10 +4,10 @@ description: we support and guide participants in co-creating a deeply regenerat
 icon: /assets/img/offerings/sankofa.png
 icon-color: /assets/img/offerings/sankofa-color.png
 deliverables:
- - Experience the relief of knowing how you are not alone as you listen to others share their struggles and learnings.
- - Gain a set of simple games and conversation prompts that you can use to weave the practice of “looking forward to look back” into your personal and professional lives.
- - Come away with deep learning around how your own life lessons interweave with others’ experiences. 
- - "Especially for organizations: achieve significantly higher levels of embodied mutual trust in your team."
+  - Experience the relief of knowing how you are not alone as you listen to others share their struggles and learnings.
+  - Gain a set of simple games and conversation prompts that you can use to weave the practice of “looking forward to look back” into your personal and professional lives.
+  - Come away with deep learning around how your own life lessons interweave with others’ experiences. 
+  - "Especially for organizations: achieve significantly higher levels of embodied mutual trust in your team."
 order: 4
 date: 2021-11-04
 color: pink

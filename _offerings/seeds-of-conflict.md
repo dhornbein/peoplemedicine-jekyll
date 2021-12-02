@@ -4,9 +4,9 @@ description: This session helps teams and individuals develop skills for welcomi
 icon: /assets/img/offerings/conflict.png
 icon-color: /assets/img/offerings/conflict-color.png
 deliverables:
- - Participants understand that investing in a plan for conflict transformation and decision making is better than trying to develop it when you are in conflict or need to make a challenging decision
- - Participants understand how the tools for conflict transformation can be used as bridge building exercises to better prepare the group for conflict
- - Leave with some easy bridge building exercises to try
+  - Participants understand that investing in a plan for conflict transformation and decision making is better than trying to develop it when you are in conflict or need to make a challenging decision
+  - Participants understand how the tools for conflict transformation can be used as bridge building exercises to better prepare the group for conflict
+  - Leave with some easy bridge building exercises to try
 order: 5
 date: 2021-11-05
 color: red

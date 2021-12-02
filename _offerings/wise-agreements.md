@@ -7,10 +7,9 @@ icon-color: /assets/img/offerings/wise-agreements-color.png
 deliverables:
  - Customizable dashboard tool for visualizing and strengthening your Team’s Group Settings
  - Regenerative patterns and tools for making Wise Agreements in key areas
- - 
-    - Decision making protocol handout
-    - Domains, roles, and responsibilities handout
-    - Meeting architecture handout
+ - Decision making protocol handout
+ - Domains, roles, and responsibilities handout
+ - Meeting architecture handout
  - Insight and understanding about the real sources of tension and conflict in teams 
 order: 1
 date: 2021-11-01

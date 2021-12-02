@@ -15,7 +15,6 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      # - {label: "Cat", name: "gdoc", widget: "gdoc"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -74,3 +73,29 @@ collections:
         summary: '{{fields.text}}'
         field: {label: Text, name: "text", widget: text}
       - {label: "License", name: "license", widget: "string", required: false}
+  - name: "offerings" 
+    label: "Offerings" # Used in the UI
+    folder: "_offerings" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Deliverables"
+        name: "deliverables"
+        widget: "list"
+        required: false
+        collapsed: false
+        summary: '{{fields.text}}'
+        field: {label: Text, name: text, widget: text}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Categories", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
+      - {label: "Icon", name: "icon", widget: "image"}
+      - {label: "Color Icon", name: "icon-color", widget: "image"}
+      - label: "Color"
+        name: color
+        widget: select
+        options: ['pink','orange','yellow','cyan','blue','purple','red','green']
+      - {label: "Order", name: "order", widget: "number", value_type: int, required: false}

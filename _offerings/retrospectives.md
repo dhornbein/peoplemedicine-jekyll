@@ -5,9 +5,9 @@ pain-point: Valuable lessons and insights are missed and the team’s learning p
 icon: /assets/img/offerings/retrospectives.png
 icon-color: /assets/img/offerings/retrospectives-color.png
 deliverables:
- - A plan for how to gently introduce retrospectives into your personal life or team
- - A toolkit of retrospective patterns to implement after projects or work sprints
- - Strategies that make these practices stick
+  - A plan for how to gently introduce retrospectives into your personal life or team
+  - A toolkit of retrospective patterns to implement after projects or work sprints
+  - Strategies that make these practices stick
 order: 2
 date: 2021-11-02
 color: orange
