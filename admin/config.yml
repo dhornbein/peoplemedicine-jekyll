@@ -36,97 +36,41 @@ collections:
         widget: object
         summary: '{{field.label}}'
         fields:
-          - {label: "Google Doc Link", name: "gdoc", widget: "gdoc", required: false }
+          - {label: "Google Doc ID", name: "gdoc", widget: "string", required: false }
           - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false, hint: Google Docs will automatically generate thumbnails}
           - {label: "Upload File", name: "url", widget: "file", required: false}
       - label: "Links"
         name: "links"
         widget: "list"
-        summary: '{{fields.type}}: {{fields.text}}'
-        types:
-          - label: 'Basic Link'
-            name: 'basic'
-            widget: object
-            summary: '{{fields.header}}'
-            fields:
-              - {label: "Text", name: "text", widget: "string"}
-              - {label: "Link URL", name: "href", widget: "string",hint: For Google docs, simply add the URL from the document}
-              - label: "Link Behavior"
-                name: "target"
-                widget: select
-                required: false
-                options:
-                  - { label: "Same", value: "" }
-                  - { label: "New", value: "_blank" }
-              - label: "CSS Class"
-                name: "class"
-                widget: "select"
-                multiple: true
-                required: false
-                options:
-                  - { label: "Primary Color", value: "is-primary" }
-                  - { label: "Blue", value: "is-info" }
-                  - { label: "Yellow", value: "is-warning" }
-                  - { label: "Green", value: "is-success" }
-                  - { label: "red", value: "is-danger" }
-                  - { label: "Lightened", value: "is-light" }
-                  - { label: "Outlined", value: "is-outlined" }
-                  - { label: "Inverted", value: "is-inverted" }
-          - label: 'Google Link'
-            name: 'gdoc'
-            widget: object
-            summary: '{{fields.handler}}'
-            fields:
-              - label: "Type"
-                name: "handler"
-                widget: select
-                default: gdoc
-                hint: What kind of Google link is this?
-                options: 
-                  - { label: Google Doc, value: gdoc}
-                  - { label: Preview Google Doc, value: gdoc_preview}
-                  - { label: Template Google Doc, value: gdoc_template}
-                  - { label: Copy Google Doc, value: gdoc_copy}
-                  - { label: Download Google Doc as PDF, value: gdoc_pdf}
-                  - { label: View Google Drive File, value: gdoc_view}
-                  - { label: Download Google Drive File, value: gdoc_download}
-              - {label: "Text", name: "text", widget: "string"}
-              - {label: "URL", name: "href", widget: "hidden", default: false}
-              - {label: "Link URL", name: "link", widget: "gdoc",hint: paste the document share link here}
-              - label: "Link Behavior"
-                name: "target"
-                widget: select
-                required: false
-                options:
-                  - { label: "Same", value: "" }
-                  - { label: "New", value: "_blank" }
-              - label: "CSS Class"
-                name: "class"
-                widget: "select"
-                multiple: true
-                required: false
-                options:
-                  - { label: "Primary Color", value: "is-primary" }
-                  - { label: "Blue", value: "is-info" }
-                  - { label: "Yellow", value: "is-warning" }
-                  - { label: "Green", value: "is-success" }
-                  - { label: "red", value: "is-danger" }
-                  - { label: "Lightened", value: "is-light" }
-                  - { label: "Outlined", value: "is-outlined" }
-                  - { label: "Inverted", value: "is-inverted" }
+        summary: '{{fields.text}} <{{fields.href}}>'
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "Link URL", name: "href", widget: "gdoc",hint: Enter Google Doc edit link for options}
+          - label: "Link Behavior"
+            name: "target"
+            widget: select
+            required: false
+            options:
+              - { label: "Same", value: "" }
+              - { label: "New", value: "_blank" }
+          - label: "CSS Class"
+            name: "class"
+            widget: "select"
+            multiple: true
+            required: false
+            options:
+              - { label: "Primary Color", value: "is-primary" }
+              - { label: "Blue", value: "is-info" }
+              - { label: "Yellow", value: "is-warning" }
+              - { label: "Green", value: "is-success" }
+              - { label: "red", value: "is-danger" }
+              - { label: "Lightened", value: "is-light" }
+              - { label: "Outlined", value: "is-outlined" }
+              - { label: "Inverted", value: "is-inverted" }
       - label: "Citations"
         name: "citations"
         widget: "list"
         required: false
-        summary: '{{field.value}}'
+        summary: '{{fields.text}}'
         field: {label: Text, name: "text", widget: text}
       - {label: "License", name: "license", widget: "string", required: false}
-  - name: "test" # Used in routes, e.g., /admin/collections/blog
-    label: "Test" # Used in the UI
-    folder: "_test" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Test", name: "gdoc", widget: "gdoc"}
-      - {label: "Title", name: "title", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
