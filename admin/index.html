@@ -270,6 +270,41 @@
     }
     
     CMS.registerWidget('gdoc', GoogleDocControl, GoogleDocPreivew, schema);
+    
+    var GoogleDocIdControl = createClass({
+      valueChange: function(e) {
+        let regex = /d\/([^/]*)|id=([^/&]*)/,
+            match = e.target.value.match(regex),
+            id = match ? match[1] || match[2] : false;
+        
+        if (id) {
+          this.props.onChange(id);
+        } else {
+          this.props.onChange(e.target.value);
+        }
+
+      },
+      render: function() {
+        return h('input', {
+                  id: this.props.forID,
+                  className: this.props.classNameWrapper,
+                  type: 'text',
+                  value: this.props.value,
+                  onChange: this.valueChange,
+                  placeholder: 'Enter URL'
+                })
+      },
+    });
+    var GoogleDocIdPreivew = createClass({
+      render: function() {
+        return h('div', {},
+          h('strong', {}, this.props.field.get('name','id') + ': '),
+          this.props.value
+        );
+      }
+    });
+    
+    CMS.registerWidget('gdocId', GoogleDocIdControl, GoogleDocIdPreivew);
     </script>
 </body>
 </html>

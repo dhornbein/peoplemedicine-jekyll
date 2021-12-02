@@ -36,7 +36,7 @@ collections:
         widget: object
         summary: '{{field.label}}'
         fields:
-          - {label: "Google Doc ID", name: "gdoc", widget: "string", required: false }
+          - {label: "Google Doc ID", name: "gdocId", widget: "gdocId", required: false }
           - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false, hint: Google Docs will automatically generate thumbnails}
           - {label: "Upload File", name: "url", widget: "file", required: false}
       - label: "Links"
