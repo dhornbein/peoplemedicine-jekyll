@@ -9,43 +9,130 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
+    var helpers = {
+        handler: null,
+        url: null,
+      };
     var GoogleDocControl = createClass({
-      handleChange: function(e) {
-        var input = e.target.value;
-        // if id is present, use it
-        var id = input.match(/d\/([^/]*)/);
-        if (id) {
-          id = id[1];
-        } else {
-          id = false
-        }
-        
-        this.props.onChange(e.target.value = { 'url': input, 'id': id } );
 
+      getInitialState: function() {
+        return {
+          valueUrl: '',
+          activeHandler: null,
+          gid: null,
+        };
       },
 
-      // isValid: function() {
-        
-      //   // is this.props.value an array?
-      //   input = Array.isArray(this.props.value) ? this.props.value : '';
-      //   // is input a valid url?
-      //   var url = input.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
+      getDefaultProps: function() {
+        return {
+          handlers: {
+            gdoc: {
+              title: 'Google Doc',
+              type: 'doc',
+              url: 'https://docs.google.com/document/d/[ID]/edit'
+            },
+            gdoc_preview: {
+              title: 'Preview Google Doc',
+              type: 'doc',
+              url: 'https://docs.google.com/document/d/[ID]/preview'
+            },
+            gdoc_template: {
+              title: 'Template Google Doc',
+              type: 'doc',
+              url: 'https://docs.google.com/document/d/[ID]/template/preview'
+            },
+            gdoc_copy: {
+              title: 'Copy Google Doc',
+              type: 'doc',
+              url: 'https://docs.google.com/document/d/[ID]/copy'
+            },
+            gdoc_pdf: {
+              title: 'Download Google Doc as PDF',
+              type: 'doc',
+              url: 'https://docs.google.com/document/d/[ID]/export?format=pdf'
+            },
+            gdoc_view: {
+              title: 'View Google Drive File',
+              type: 'file',
+              url: 'https://drive.google.com/file/d/[ID]/view'
+            },
+            gdoc_download: {
+              title: 'Download Google Drive File',
+              type: 'file',
+              url: 'https://drive.google.com/uc?export=download&id=[ID]'
+            }
+          }
+        }
+      },
+      
+      handleChange: function(e) {
+        this.swapUrl(e.target.value);
+      },
 
-      //   return url ? true : { error: { message: 'Your error message.' } };
-      // },
+      swapUrl: function(input) {
+        let handler = this.state.activeHandler;
+        var id = input.match(/d\/([^/]*)/);
+        if (id) {
+          this.props.onChange(handler.url.replace('[ID]',id[1]));
+          this.changeValueUrl(input);
+        } else {
+          this.props.onChange(input);
+        }
+      },
+
+      handleChangeHandler: function(e) {
+        this.changeHandler(this.props.handlers[e.target.value]);
+      },
+
+      changeHandler: function(value) {
+        if (value) {
+          this.setState({ activeHandler: value }, () => {
+            if (this.state.valueUrl) {
+              this.swapUrl(this.state.valueUrl);
+            }
+          });
+        }
+      },
+
+      changeValueUrl: function(value) {
+        this.setState({valueUrl: value});
+      },
     
       render: function() {
-        // if this.props.value is an array
-        console.log('rendering',this.props.value);
-        var value = (typeof this.props.value === 'object') ? this.props.value.url : '';
+        if (!this.state.activeHandler) this.changeHandler(this.props.handlers.gdoc);
+        
+        return h('div',{},
+          // select with options from this.props.handlers
+          h('select',{
+            onChange: this.handleChangeHandler,
+          },
+            Object.keys(this.props.handlers).map(function(key) {
+              var handler = this.props.handlers[key];
+              return h('option',{
+                value: key
+              },handler.title);
+            }.bind(this))
+          ),
+          h('input', {
+            id: this.props.forID,
+            className: this.props.classNameWrapper,
+            type: 'url',
+            value: this.props.value,
+            onChange: this.handleChange,
+            placeholder: 'Enter Google Doc URL'
+          }),
+          // label for input
+          h('label',{
+            htmlFor: this.props.forID + '_url'
+          },'Input URL'),
+          h('input', {
+            id: this.props.forID + '_url',
+            className: this.props.classNameWrapper,
+            type: 'url',
+            value: this.state.valueUrl,
+          }),
 
-        return h('input', {
-          id: this.props.forID,
-          className: this.props.classNameWrapper,
-          type: 'text',
-          value: value,
-          onChange: this.handleChange,
-        });
+        )
       },
     });
     
