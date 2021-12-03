@@ -4,9 +4,9 @@ description: Work skillfully with the interpersonal tensions and knots that crea
 icon: /assets/img/offerings/conflict.png
 icon-color: /assets/img/offerings/conflict-color.png
 deliverables:
-  - Participants understand that investing in a plan for conflict transformation and decision making is better than trying to develop it when you are in conflict or need to make a challenging decision
-  - Participants understand how the tools for conflict transformation can be used as bridge building exercises to better prepare the group for conflict
-  - Leave with some easy bridge building exercises to try
+  - See clearly how preparing the soil for skillful conflict transformation is better than trying to develop a plan when you are in conflict or need to make a challenging decision
+  - Understand how interpersonal knots and tensions are excellent opportunities to deepen trust between family, friends and coworkers, when they're addressed early
+  - Gain easy to use trust-building, conflict-transforming tools for everyday use 
 order: 5
 date: 2021-11-05
 color: red
