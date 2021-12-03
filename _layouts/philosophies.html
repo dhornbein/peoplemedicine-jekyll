@@ -2,4 +2,34 @@
 layout: default
 ---
 
-{{ content }}
+<section class="section">
+  <div class="container is-fullhd">
+    <div class="columns is-centered">
+      <div class="column is-readable-width">
+        <h1 class="title">{{ page.title }}</h1>
+        <main class="content">
+          {{ content }}
+        </main>
+        <aside>
+          <h2 class="title is-4">Fundamental Skills</h2>
+          <ul class="tags are-medium">
+            {%- for skill in page.skills -%}
+            <li class="tag is-light is-primary">{{ skill }}</li>
+            {%- endfor -%}
+          </ul>
+        </aside>
+      </div>
+      <aside class="column is-narrow">
+        {%- for phil in site.philosophies -%}
+          {%- if phil.slug != page.slug -%}
+          <a href="{{ phil.url }}" class="box philosophy">
+            <h2 class="title mb-1">{{ phil.title }}</h2>
+            <p class="block">{{ phil.description }}</p>
+            <p class="block is-size-5"><strong>Core Principle:</strong> {{ phil.principle }}</p>
+          </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </aside>
+    </div>
+  </div>
+</section>

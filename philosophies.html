@@ -1,0 +1,20 @@
+---
+permalink: /philosophies/
+redirect_from: /p
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">Our Philosophies</h1>
+    <div class="columns">
+      {%- for phil in site.philosophies -%}
+      <a href="{{ phil.url }}" class="column is-one-third-tablet box philosophy has-background-pink">
+        <h2 class="title mb-1">{{ phil.title }}</h2>
+        <p class="block">{{ phil.description }}</p>
+        <p class="block is-size-5"><strong>Core Principle:</strong> {{ phil.principle }}</p>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
