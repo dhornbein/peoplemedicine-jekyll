@@ -1,6 +1,6 @@
 ---
 title: Shorter More Productive Meetings
-description: Meetings are unnecessarily draining and we feel powerless to change that.
+description: Meetings are unnecessarily draining and we feel powerless to change that
 icon: /assets/img/offerings/meetings.png
 icon-color: /assets/img/offerings/meetings-color.png
 deliverables:
