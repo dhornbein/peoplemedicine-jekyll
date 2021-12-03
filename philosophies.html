@@ -6,12 +6,81 @@ redirect_from: /p
 <section class="section">
   <div class="container">
     <h1 class="title is-2">Our Philosophies</h1>
-    <div class="columns">
+    <div class="columns is-multiline">
       {%- for phil in site.philosophies -%}
-      <a href="{{ phil.url }}" class="column is-one-third-tablet box philosophy has-background-pink">
-        <h2 class="title mb-1">{{ phil.title }}</h2>
-        <p class="block">{{ phil.description }}</p>
-        <p class="block is-size-5"><strong>Core Principle:</strong> {{ phil.principle }}</p>
+      <div href="#{{ phil.slug }}" class="column is-one-third-tablet">
+        <article class="philosophy" onclick="this.classList.toggle('open')">
+          <div class="columns is-centered is-justify-content-space-around">
+            <div class="column is-narrow is-visible-open">
+              <h3 class="title is-4">Philosophies</h3>
+              <div class="tags are-medium">
+                {%- for item in site.philosophies -%}
+                {%- if item.slug != phil.slug -%}
+                <a href="#{{ item.slug }}" class="tag is-dark">{{ item.title }}</a>
+                {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+            <div class="column is-readable-width">
+              
+              <h2 class="title mb-1">{{ phil.title }}</h2>
+              <p class="block">{{ phil.description }}</p>
+              <div class="is-visible-open content">{{ phil.content }}</div>
+              <p class="block is-size-5"><strong>Core Principle:</strong> {{ phil.principle }}</p>
+              <a href="{{ phil.url }}" class="button">Other View</a>
+              
+            </div>
+            <div class="column is-one-third-tablet is-readable-width is-visible-open">
+              <h3 class="title is-4">Patters</h3>
+              <div class="tags are-medium">
+                {%- for slug in phil.patterns -%}
+                  {%- assign pattern = site.patterns | where: 'slug', slug -%}
+                  <a href="{{ pattern[0].url }}" class="tag is-warning">{{ pattern[0].title }}</a>
+                {%- endfor -%}
+              </div>
+              <h3 class="title is-4">Skills</h3>
+              <div class="tags are-medium">
+                {%- for skill in phil.skills -%}
+                  <span class="tag">{{ skill }}</span>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">Patterns</h1>
+    <div class="columns is-multiline">
+      {%- for pattern in site.patterns -%}
+      <a href="{{ pattern.url }}" class="column is-one-third-tablet patter">
+        <div class="box is-fullheight has-background-yellow">
+          <h2 class="title mb-1">{{ pattern.title }}</h2>
+          <p class="block">{{ pattern.description }}</p>
+          <p class="block is-size-5"><strong>Core Principle:</strong> {{ pattern.principle }}</p>
+        </div>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">Offerings</h1>
+    <div class="columns is-multiline">
+      {%- for offering in site.offerings -%}
+      <a href="{{ offering.url }}" class="column is-one-third-tablet patter">
+        <div class="box is-fullheight offering has-background-{{ offering.color }}">
+          <figure><img src="{{ offering.icon }}" alt="{{ offering.title }} icon"></figure>
+          <h2 class="title mb-1">{{ offering.title }}</h2>
+          <p class="block">{{ offering.description }}</p>
+        </div>
       </a>
       {%- endfor -%}
     </div>

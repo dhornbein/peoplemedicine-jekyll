@@ -4,6 +4,13 @@ layout: default
 
 <section class="section">
   <div class="container is-fullhd">
+    <nav class="breadcrumb has-succeeds-separator is-small mb-2" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/p">Overview</a></li>
+        <li class="is-active"></li>
+      </ul>
+    </nav>
     <div class="columns is-centered">
       <div class="column is-readable-width">
         <h1 class="title">{{ page.title }}</h1>
@@ -19,16 +26,22 @@ layout: default
           </ul>
         </aside>
       </div>
-      <aside class="column is-narrow">
+      <aside class="column is-one-third-desktop">
         {%- for phil in site.philosophies -%}
           {%- if phil.slug != page.slug -%}
-          <a href="{{ phil.url }}" class="box philosophy">
+          <a href="{{ phil.url }}" class="box has-background-light">
             <h2 class="title mb-1">{{ phil.title }}</h2>
             <p class="block">{{ phil.description }}</p>
             <p class="block is-size-5"><strong>Core Principle:</strong> {{ phil.principle }}</p>
           </a>
           {%- endif -%}
         {%- endfor -%}
+        <div class="tags are-medium">
+          {%- for slug in page.patterns -%}
+            {%- assign pattern = site.patterns | where: 'slug', slug -%}
+            <a href="{{ pattern[0].url }}" class="tag is-primary">{{ pattern[0].title }}</a>
+          {%- endfor -%}
+        </div>
       </aside>
     </div>
   </div>

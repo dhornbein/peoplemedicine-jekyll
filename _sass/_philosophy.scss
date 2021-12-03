@@ -1,0 +1,26 @@
+.philosophy {
+  @extend .box;
+  background-color: $pink;
+  cursor: pointer;
+
+  .is-visible-open {
+    display: none;
+  }
+
+  &.open {
+    overscroll-behavior: contain;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-top: $navbar-height + $box-padding;
+    z-index: 1;
+    .is-visible-open {
+      display: block;
+    }
+    .is-hidden-open {
+      display: none;
+    }
+  }
+}
