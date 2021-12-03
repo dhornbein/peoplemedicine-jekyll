@@ -1,6 +1,6 @@
 ---
 title: Seeds of Trust/Seeds of Conflict
-description: Welcome and work skillfully with the interpersonal tensions and knots that create the kindling for full-blown conflicts
+description: Learn to work skillfully with the interpersonal tensions and knots that create the kindling for full-blown conflicts
 icon: /assets/img/offerings/conflict.png
 icon-color: /assets/img/offerings/conflict-color.png
 deliverables:
