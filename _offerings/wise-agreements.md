@@ -1,6 +1,6 @@
 ---
 title: Wise Agreements for Regenerative Teams
-description: Welcoming and working skillfully with the interpersonal tensions and knots that create the kindling for full-blown conflicts
+description: Your team's Group Settings are loose, undefined, confusing
 pain-point: Your team's Group Settings are loose, undefined, confusing
 icon: /assets/img/offerings/wise-agreements.png
 icon-color: /assets/img/offerings/wise-agreements-color.png
