@@ -12,14 +12,24 @@ redirect_from: /p
         <article class="philosophy" onclick="this.classList.toggle('open')">
           <div class="columns is-centered is-justify-content-space-around">
             <div class="column is-narrow is-visible-open">
-              <h3 class="title is-4">Philosophies</h3>
-              <div class="tags are-medium">
-                {%- for item in site.philosophies -%}
-                {%- if item.slug != phil.slug -%}
-                <a href="#{{ item.slug }}" class="tag is-dark">{{ item.title }}</a>
-                {%- endif -%}
-                {%- endfor -%}
-              </div>
+              <aside class="menu">
+                <p class="menu-label has-text-black-ter">
+                  Philosophy
+                </p>
+                <ul class="menu-list">
+                  {%- for item in site['philosophies'] -%}
+                  <li><a href="{{ item.url }}" {%- if page.slug == item.slug -%}class="is-active"{%- endif -%}>{{ item.title }}</a></li>
+                  {%- endfor -%}
+                </ul>
+                <p class="menu-label has-text-black-ter">
+                  Patterns
+                </p>
+                <ul class="menu-list">
+                  {%- for item in site['patterns'] -%}
+                  <li><a href="{{ item.url }}" {%- if page.slug == item.slug -%}class="is-active"{%- endif -%}>{{ item.title }}</a></li>
+                  {%- endfor -%}
+                </ul>
+              </aside>
             </div>
             <div class="column is-readable-width">
               
@@ -27,7 +37,6 @@ redirect_from: /p
               <p class="block">{{ phil.description }}</p>
               <div class="is-visible-open content">{{ phil.content }}</div>
               <p class="block is-size-5"><strong>Core Principle:</strong> {{ phil.principle }}</p>
-              <a href="{{ phil.url }}" class="button">Other View</a>
               
             </div>
             <div class="column is-one-third-tablet is-readable-width is-visible-open">
@@ -35,7 +44,7 @@ redirect_from: /p
               <div class="tags are-medium">
                 {%- for slug in phil.patterns -%}
                   {%- assign pattern = site.patterns | where: 'slug', slug -%}
-                  <a href="{{ pattern[0].url }}" class="tag is-warning">{{ pattern[0].title }}</a>
+                  <a href="{{ pattern[0].url }}" class="tag is-primary">{{ pattern[0].title }}</a>
                 {%- endfor -%}
               </div>
               <h3 class="title is-4">Skills</h3>

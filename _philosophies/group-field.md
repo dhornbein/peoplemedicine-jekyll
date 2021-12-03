@@ -20,6 +20,8 @@ patterns:
   - gentle-coming-out-of-hiding
   - warm-data-flows
   - reality-weaving
+resources:
+  - empathy-circuit
 date: 2021-12-03T00:26:12.333Z
 ---
 We are social animals. In any group situation, there is an invisible energetic field of social-emotional currents shaping the experience people are having in that group. 

@@ -2,4 +2,90 @@
 layout: default
 ---
 
-{{ content }}
+<section class="section">
+  <div class="container is-fullhd">
+    <div class="columns is-centered is-justify-content-space-around">
+      <div class="colmun is-narrow">
+        <aside class="menu">
+          <p class="menu-label">
+            <a href="/p">Overview</a>
+          </p>
+          <p class="menu-label">
+            Philosophy
+          </p>
+          <ul class="menu-list">
+            {%- for item in site['philosophies'] -%}
+            <li><a href="{{ item.url }}" {%- if page.slug == item.slug -%}class="is-active"{%- endif -%}>{{ item.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+          <p class="menu-label">
+            Patterns
+          </p>
+          <ul class="menu-list">
+            {%- for item in site['patterns'] -%}
+            <li><a href="{{ item.url }}" {%- if page.slug == item.slug -%}class="is-active"{%- endif -%}>{{ item.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-readable-width">
+        <h1 class="title is-2">{{ page.title }}</h1>
+        <main class="content">
+          {{ content }}
+        </main>
+        <footer>
+          {%- include collections-prev-next.html -%}
+        </footer>
+      </div>
+      <aside class="column is-one-third-desktop">
+        <div class="box">
+          <strong class="is-size-6 is-uppercase is-family-monospace">Core Principle:</strong> 
+          <p class="is-size-4">{{ page.principle }}</p>
+        </div>
+
+        <h2 class="title is-4">Related Patterns</h2>
+        {%- if page.patterns -%}
+        <div class="tags are-medium">
+          {%- for pattern in site['patterns'] -%}
+            {%- for test in page.patterns -%}
+            {%- if test == pattern.slug -%}
+            <a href="{{ pattern.url }}" class="tag is-primary">{{ pattern.title }}</a>
+            {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+        {%- else -%}
+        <p class="has-text-grey mb-3">No Related Patterns</p>
+        {%- endif -%}
+
+        {%- if page.resources -%}
+        <h2 class="title is-4">Resources</h2>
+        {%- endif -%}
+        
+        {%- for res in site['resources'] -%}
+          {%- for test in page.resources -%}
+          {%- if test == res.slug -%}
+            <article class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <a href="{{ res.url }}">{%- include thumbnail.html class="has-drop-shadow" size="100" file=res.file href=res.links.first.href alt=res.title -%}</a>
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <a href="{{ res.url }}"><strong>{{ res.title }}</strong></a>
+                    <br>
+                    {{ res.description }}
+                  </p>
+                </div>
+              </div>
+            </article>
+          {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+        
+      </aside>
+    </div>
+  </div>
+</section>
