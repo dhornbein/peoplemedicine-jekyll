@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let colors = ['pink','orange','yellow','cyan','blue','purple','red','green']
 let colorsHex = ['#FF77F9', '#FFA47F', '#F9E800', '#87FFDD', '#35C7FF', '#A992FF', '#FD4796', '#C3FF6F']
+let homepage = document.getElementById('home-hero');
 
 document.addEventListener('DOMContentLoaded', () => {
   [...document.getElementsByClassName('js-rainbow')].forEach(el => {
@@ -32,9 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-let homepage = document.getElementById('home-hero');
 
-homepage.addEventListener('mousemove', e => {
+if( homepage ) homepage.addEventListener('mousemove', e => {
   [...homepage.getElementsByClassName('js-rainbow')].forEach(el => {
     rainbowLetterChange(el);
   });
@@ -73,58 +73,60 @@ function rainbow(el) {
 // Drawing canvas fun
 
 const canvas = document.getElementById("home-canvas");
-const ctx = canvas.getContext("2d");
-let coord = { x: 0, y: 0 },
-color = null,
-drawing = false;
+if ( canvas ) {
+  const ctx = canvas.getContext("2d");
+  let coord = { x: 0, y: 0 },
+  color = null,
+  drawing = false;
 
-document.addEventListener("mousedown", start);
-canvas.addEventListener("mouseup",stop);
-canvas.addEventListener("mouseleave",stop);
-window.addEventListener("resize", resize);
+  document.addEventListener("mousedown", start);
+  canvas.addEventListener("mouseup",stop);
+  canvas.addEventListener("mouseleave",stop);
+  window.addEventListener("resize", resize);
 
-function setColor() {
-  color = colorsHex[Math.floor(Math.random() * colorsHex.length) - 1]
-}
-
-function resize() {
-  ctx.canvas.width = canvas.parentElement.clientWidth;
-  ctx.canvas.height = canvas.parentElement.clientHeight;
-}
-resize();
-
-function toggle(event) {
-  console.log('toggle!');
-  if (drawing) {
-    stop();
-  } else {
-    start(event);
+  function setColor() {
+    color = colorsHex[Math.floor(Math.random() * colorsHex.length) - 1]
   }
-  drawing = !drawing;
-}
 
-function start(event) {
-  setColor();
-  document.addEventListener("mousemove", draw);
-  reposition(event);
-}
+  function resize() {
+    ctx.canvas.width = canvas.parentElement.clientWidth;
+    ctx.canvas.height = canvas.parentElement.clientHeight;
+  }
+  resize();
 
-function reposition(event) {
-  coord.x = event.clientX - canvas.offsetLeft + window.scrollX;
-  coord.y = event.clientY - canvas.offsetTop + window.scrollY;
-}
+  function toggle(event) {
+    console.log('toggle!');
+    if (drawing) {
+      stop();
+    } else {
+      start(event);
+    }
+    drawing = !drawing;
+  }
 
-function stop() {
-  document.removeEventListener("mousemove", draw);
-}
+  function start(event) {
+    setColor();
+    document.addEventListener("mousemove", draw);
+    reposition(event);
+  }
 
-function draw(event) {
-  ctx.beginPath();
-  ctx.lineWidth = 3;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = color;
-  ctx.moveTo(coord.x, coord.y);
-  reposition(event);
-  ctx.lineTo(coord.x, coord.y);
-  ctx.stroke();
+  function reposition(event) {
+    coord.x = event.clientX - canvas.offsetLeft + window.scrollX;
+    coord.y = event.clientY - canvas.offsetTop + window.scrollY;
+  }
+
+  function stop() {
+    document.removeEventListener("mousemove", draw);
+  }
+
+  function draw(event) {
+    ctx.beginPath();
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = color;
+    ctx.moveTo(coord.x, coord.y);
+    reposition(event);
+    ctx.lineTo(coord.x, coord.y);
+    ctx.stroke();
+  }
 }
