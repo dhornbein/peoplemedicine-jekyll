@@ -35,6 +35,8 @@ collections:
   resources:
     output: true
     permalink: /r/:name
+  philosophies:
+    output: true
 
 defaults:
   -
@@ -48,6 +50,12 @@ defaults:
       type: "resources"
     values:
       layout: "resource"
+  -
+    scope:
+      path: ""
+      type: "philosophies"
+    values:
+      layout: "philosophies"
 
 # Build settings
 plugins:

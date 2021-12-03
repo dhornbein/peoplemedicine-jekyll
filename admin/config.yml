@@ -99,3 +99,41 @@ collections:
         widget: select
         options: ['pink','orange','yellow','cyan','blue','purple','red','green']
       - {label: "Order", name: "order", widget: "number", value_type: int, required: false}
+  - name: "philosophies" 
+    label: "Philosophies"
+    folder: "_philosophies"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Core principle", name: "principle", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Fundamental Skill"
+        name: "skills"
+        widget: "relation"
+        collection: "data"
+        file: "skills"
+        multiple: true
+        search_fields: [skills.*.name,skills.*.description]
+        display_fields: ["skills.*.name"]
+        value_field: skills.*.name
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Categories", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
+
+  - name: 'data'
+    label: 'Data Collections'
+    editor:
+      preview: false
+    files:
+      - label: 'Skills'
+        name: 'skills'
+        file: '_data/skills.yml'
+        fields:
+          - label: 'Skills'
+            name: 'skills'
+            widget: 'list'
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Description, name: description, widget: markdown, required: false }
