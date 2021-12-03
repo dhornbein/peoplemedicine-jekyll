@@ -1,6 +1,6 @@
 ---
 title: Sankofa Circles
-description: Co-create a deeply regenerative experience of mutual story-based learning
+description: Co-create a deeply regenerative experience of story-based mutual learning
 icon: /assets/img/offerings/sankofa.png
 icon-color: /assets/img/offerings/sankofa-color.png
 deliverables:
@@ -13,7 +13,7 @@ date: 2021-11-04
 color: pink
 ---
 
-We urgently need a way to tap into the collective power of key life lessons we never took the time to unpack, and we need a way to do this in a context of warmth, ease, trust, and psychological safety. Sankofa Circles are a facilitated group process modelled on the [Ghanian concept of “going backwards to go forward:”](https://www.berea.edu/cgwc/the-power-of-sankofa/) in this 2-hour session, we support and guide participants in co-creating a deeply regenerative experience of story-based, mutual learning focused on critical areas where social changemakers frequently experience frustration and failure, such as: 
+We urgently need a way to tap into the collective power of key life lessons we never took the time to unpack, and we need a way to do this in a context of warmth, ease, trust, and psychological safety. Sankofa Circles are a facilitated group process modelled on the [Ghanian concept of “going backwards to go forward:”](https://www.berea.edu/cgwc/the-power-of-sankofa/) in this 2-hour session, we support and guide participants in co-creating a deeply regenerative experience of story-based learning focused on critical areas where social changemakers frequently experience frustration and failure, such as: 
 
 - **Trust**: how does trust show up in your organization(s)? What has helped build trust? What has eroded trust?
 - **Power**: how has power shown up in our lives, was it hidden? When it showed itself, how was it wielded? Were you or others able to talk about it? 
