@@ -1,6 +1,6 @@
 ---
 title: Making Conflicts Regenerative
-description: Tapping into the relationship-deepening power of conflict.
+description: Tapping into the relationship-deepening power of conflict
 icon: /assets/img/offerings/regenerative-conflict.png
 icon-color: /assets/img/offerings/regenerative-conflict-color.png
 deliverables: false
