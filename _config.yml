@@ -37,6 +37,8 @@ collections:
     permalink: /r/:name
   philosophies:
     output: true
+  patterns:
+    output: true
 
 defaults:
   -
@@ -56,6 +58,12 @@ defaults:
       type: "philosophies"
     values:
       layout: "philosophies"
+  -
+    scope:
+      path: ""
+      type: "patterns"
+    values:
+      layout: "patterns"
 
 # Build settings
 plugins:

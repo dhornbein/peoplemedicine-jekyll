@@ -16,6 +16,7 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "hidden", required: false}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Categories", name: "category", widget: "string", required: false}
@@ -118,6 +119,55 @@ collections:
         search_fields: [skills.*.name,skills.*.description]
         display_fields: ["skills.*.name"]
         value_field: skills.*.name
+      - label: "Patterns"
+        name: "patterns"
+        widget: "relation"
+        required: false
+        collection: "patterns"
+        multiple: true
+        search_fields: [title,description,principle]
+        display_fields: [title]
+        value_field: "{{slug}}"
+      - label: "Related Resources"
+        name: "resources"
+        widget: "relation"
+        required: false
+        collection: "resource"
+        multiple: true
+        search_fields: [title,description]
+        display_fields: [title]
+        value_field: "{{slug}}"
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Categories", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
+  - name: "patterns" 
+    label: "Patterns"
+    folder: "_patterns"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Core principle", name: "principle", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Related Patterns"
+        name: "patterns"
+        widget: "relation"
+        required: false
+        collection: "patterns"
+        multiple: true
+        search_fields: [title,description,principle]
+        display_fields: [title]
+        value_field: "{{slug}}"
+      - label: "Related Resources"
+        name: "resources"
+        widget: "relation"
+        required: false
+        collection: "resource"
+        multiple: true
+        search_fields: [title,description]
+        display_fields: [title]
+        value_field: "{{slug}}"
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Categories", name: "category", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
