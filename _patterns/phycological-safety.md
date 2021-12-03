@@ -2,7 +2,7 @@
 title: Psychological Safety
 description: The most important resource a team has is a group field that
   promotes trust and safety.
-principle: Trust comes from feeling safe
+principle: Trust comes from feeling safe, seen, heard and respected
 patterns:
   - gentle-coming-out-of-hiding
 resources:
