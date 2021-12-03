@@ -1,6 +1,6 @@
 ---
 title: Sankofa Circles
-description: We support and guide participants in co-creating a deeply regenerative experience of mutual story-based learning
+description: Co-create a deeply regenerative experience of mutual story-based learning
 icon: /assets/img/offerings/sankofa.png
 icon-color: /assets/img/offerings/sankofa-color.png
 deliverables:
