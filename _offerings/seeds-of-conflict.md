@@ -4,9 +4,9 @@ description: Work skillfully with the interpersonal tensions and knots that crea
 icon: /assets/img/offerings/conflict.png
 icon-color: /assets/img/offerings/conflict-color.png
 deliverables:
-  - See clearly how preparing the soil for skillful conflict transformation is better than trying to develop a plan when you are in conflict or need to make a challenging decision
+  - See clearly how preparing the soil IN ADVANCE for skillful conflict transformation is better than trying to develop a plan when you are in conflict or need to make a challenging decision
   - Understand how interpersonal knots and tensions are excellent opportunities to deepen trust between family, friends and coworkers, when they're addressed early
-  - Gain easy to use trust-building, conflict-transforming tools for everyday use 
+  - Gain easy-to-use trust-building, conflict-transforming tools for everyday use 
 order: 5
 date: 2021-11-05
 color: red
