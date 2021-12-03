@@ -1,6 +1,6 @@
 ---
 title: Psychological Safety
-description: A team's most important resource a team has is a group field that
+description: The most important resource a team has is a group field that
   promotes trust and safety.
 principle: Trust comes from feeling safe
 patterns:
