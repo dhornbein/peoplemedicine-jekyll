@@ -67,6 +67,57 @@ collections:
               - { label: "Lightened", value: "is-light" }
               - { label: "Outlined", value: "is-outlined" }
               - { label: "Inverted", value: "is-inverted" }
+      - label: Related # collection of related fields
+        name: related
+        widget: object
+        required: false
+        summary: '{{field.label}}'
+        fields:
+          - label: "Related Skills"
+            name: "skills"
+            widget: "relation"
+            required: false
+            collection: "skills"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Patterns"
+            name: "patterns"
+            widget: "relation"
+            required: false
+            collection: "patterns"
+            multiple: true
+            search_fields: [title,description,principle]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Resources"
+            name: "resources"
+            widget: "relation"
+            required: false
+            collection: "resource"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Offerings"
+            name: "offerings"
+            widget: "relation"
+            required: false
+            collection: "offerings"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Philosophies"
+            name: "philosophies"
+            widget: "relation"
+            required: false
+            collection: "philosophies"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
       - label: "Citations"
         name: "citations"
         widget: "list"
@@ -90,6 +141,57 @@ collections:
         collapsed: false
         summary: '{{fields.text}}'
         field: {label: Text, name: text, widget: text}
+      - label: Related # collection of related fields
+        name: related
+        widget: object
+        required: false
+        summary: '{{field.label}}'
+        fields:
+          - label: "Related Skills"
+            name: "skills"
+            widget: "relation"
+            required: false
+            collection: "skills"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Patterns"
+            name: "patterns"
+            widget: "relation"
+            required: false
+            collection: "patterns"
+            multiple: true
+            search_fields: [title,description,principle]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Resources"
+            name: "resources"
+            widget: "relation"
+            required: false
+            collection: "resource"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Offerings"
+            name: "offerings"
+            widget: "relation"
+            required: false
+            collection: "offerings"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Philosophies"
+            name: "philosophies"
+            widget: "relation"
+            required: false
+            collection: "philosophies"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Categories", name: "category", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
@@ -110,33 +212,57 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Core principle", name: "principle", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
-      - label: "Fundamental Skill"
-        name: "skills"
-        widget: "relation"
-        collection: "data"
-        file: "skills"
-        multiple: true
-        search_fields: [skills.*.name,skills.*.description]
-        display_fields: ["skills.*.name"]
-        value_field: skills.*.name
-      - label: "Patterns"
-        name: "patterns"
-        widget: "relation"
+      - label: Related # collection of related fields
+        name: related
+        widget: object
         required: false
-        collection: "patterns"
-        multiple: true
-        search_fields: [title,description,principle]
-        display_fields: [title]
-        value_field: "{{slug}}"
-      - label: "Related Resources"
-        name: "resources"
-        widget: "relation"
-        required: false
-        collection: "resource"
-        multiple: true
-        search_fields: [title,description]
-        display_fields: [title]
-        value_field: "{{slug}}"
+        summary: '{{field.label}}'
+        fields:
+          - label: "Related Skills"
+            name: "skills"
+            widget: "relation"
+            required: false
+            collection: "skills"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Patterns"
+            name: "patterns"
+            widget: "relation"
+            required: false
+            collection: "patterns"
+            multiple: true
+            search_fields: [title,description,principle]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Resources"
+            name: "resources"
+            widget: "relation"
+            required: false
+            collection: "resource"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Offerings"
+            name: "offerings"
+            widget: "relation"
+            required: false
+            collection: "offerings"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Philosophies"
+            name: "philosophies"
+            widget: "relation"
+            required: false
+            collection: "philosophies"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Categories", name: "category", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
@@ -150,40 +276,120 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Core principle", name: "principle", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
-      - label: "Related Patterns"
-        name: "patterns"
-        widget: "relation"
+      - label: Related # collection of related fields
+        name: related
+        widget: object
         required: false
-        collection: "patterns"
-        multiple: true
-        search_fields: [title,description,principle]
-        display_fields: [title]
-        value_field: "{{slug}}"
-      - label: "Related Resources"
-        name: "resources"
-        widget: "relation"
-        required: false
-        collection: "resource"
-        multiple: true
-        search_fields: [title,description]
-        display_fields: [title]
-        value_field: "{{slug}}"
+        summary: '{{field.label}}'
+        fields:
+          - label: "Related Skills"
+            name: "skills"
+            widget: "relation"
+            required: false
+            collection: "skills"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Patterns"
+            name: "patterns"
+            widget: "relation"
+            required: false
+            collection: "patterns"
+            multiple: true
+            search_fields: [title,description,principle]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Resources"
+            name: "resources"
+            widget: "relation"
+            required: false
+            collection: "resource"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Offerings"
+            name: "offerings"
+            widget: "relation"
+            required: false
+            collection: "offerings"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Philosophies"
+            name: "philosophies"
+            widget: "relation"
+            required: false
+            collection: "philosophies"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Categories", name: "category", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
-
-  - name: 'data'
-    label: 'Data Collections'
-    editor:
-      preview: false
-    files:
-      - label: 'Skills'
-        name: 'skills'
-        file: '_data/skills.yml'
+  - name: "skills" 
+    label: "Skills"
+    folder: "_skills"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: Related # collection of related fields
+        name: related
+        widget: object
+        required: false
+        summary: '{{field.label}}'
         fields:
-          - label: 'Skills'
-            name: 'skills'
-            widget: 'list'
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Description, name: description, widget: markdown, required: false }
+          - label: "Related Skills"
+            name: "skills"
+            widget: "relation"
+            required: false
+            collection: "skills"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Patterns"
+            name: "patterns"
+            widget: "relation"
+            required: false
+            collection: "patterns"
+            multiple: true
+            search_fields: [title,description,principle]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Resources"
+            name: "resources"
+            widget: "relation"
+            required: false
+            collection: "resource"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Offerings"
+            name: "offerings"
+            widget: "relation"
+            required: false
+            collection: "offerings"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Philosophies"
+            name: "philosophies"
+            widget: "relation"
+            required: false
+            collection: "philosophies"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Categories", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}

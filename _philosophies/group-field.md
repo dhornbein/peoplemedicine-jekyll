@@ -5,23 +5,28 @@ description: We are social animals. In any group situation, there is an
   people are having in that group.
 principle: Social change moves at the speed of trust. The work is better when
   the group field is charged with trust.
-skills:
-  - Inviting exiles/coming out of hiding
-  - I-statements
-  - Validating/welcoming
-  - Active Listening
-  - Owning your interpretations
-  - Sharing impact skillfully
-  - Helping others be Seen
-  - Giving and receiving feedback
-patterns:
-  - making-power-visible
-  - re-opening-time
-  - gentle-coming-out-of-hiding
-  - warm-data-flows
-  - reality-weaving
-resources:
-  - empathy-circuit
+related:
+  skills:
+    - inviting-exiles-coming-out-of-hiding
+    - i-statements
+    - validating-welcoming
+    - active-listening
+    - owning-your-interpretations
+    - sharing-impact-skillfully
+    - helping-others-be-seen
+    - giving-and-receiving-feedback
+  patterns:
+    - making-power-visible
+    - re-opening-time
+    - gentle-coming-out-of-hiding
+    - warm-data-flows
+    - reality-weaving
+  resources:
+    - empathy-circuit
+  offerings:
+    - sankofa
+  philosophies:
+    - relational-soil
 date: 2021-12-03T00:26:12.333Z
 ---
 We are social animals. In any group situation, there is an invisible energetic field of social-emotional currents shaping the experience people are having in that group. 

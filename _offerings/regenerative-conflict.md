@@ -1,12 +1,15 @@
 ---
 title: Making Conflicts Regenerative
-description: Tapping into the relationship-deepening power of conflict
+description: Tapping into the relationship-deepening power of conflict.
+deliverables: false
+related:
+  philosophies:
+    - group-field
+date: 2021-11-06
 icon: /assets/img/offerings/regenerative-conflict.png
 icon-color: /assets/img/offerings/regenerative-conflict-color.png
-deliverables: false
-order: 6
-date: 2021-11-06
 color: green
+order: 6
 ---
 
 > Conflict is the spirit of the relationship asking itself to deepen. <br>

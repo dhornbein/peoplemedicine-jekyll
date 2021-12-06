@@ -5,12 +5,13 @@ description: Norms are the rules of play for any shared experience. Be it
   remote-controlled drones there are rules. Some rules are written down but so
   many more are implicit.
 principle: Making the implicit Explicit
-patterns:
-  - making-power-visible
-  - reality-weaving
-resources:
-  - four-decision-making-methods
-  - working-together-dashboard
+related:
+  patterns:
+    - making-power-visible
+    - reality-weaving
+  resources:
+    - four-decision-making-methods
+    - working-together-dashboard
 date: 2021-12-03T02:53:26.554Z
 ---
 Norms are the rules of play for any shared experience. Be it standing in line for coffee, playing football, or dropping bombs via remote-controlled drones there are rules. Some rules are written down but so many more are implicit.
