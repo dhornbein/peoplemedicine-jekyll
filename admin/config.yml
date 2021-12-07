@@ -9,6 +9,83 @@ backend:
 media_folder: "assets/uploads"
 
 collections:
+  - name: "post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "_collections/_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "hidden", required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Categories", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Authors"
+        name: "author"
+        widget: list
+        summary: '{{fields.name}}: {{fields.email}}'
+        default:
+          - {name: Drew Hornbein, email: "drew@peoplemedicine.org", url: "https://dddrew.org"}
+          - {name: Maria Talero, email: "maria@peoplemedicine.org"}
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "email", name: "email", widget: "string", required: false}
+          - {label: "Website", name: "url", widget: "string", required: false}
+      - label: Related # collection of related fields
+        name: related
+        widget: object
+        required: false
+        summary: '{{field.label}}'
+        fields:
+          - label: "Related Skills"
+            name: "skills"
+            widget: "relation"
+            required: false
+            collection: "skills"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Patterns"
+            name: "patterns"
+            widget: "relation"
+            required: false
+            collection: "patterns"
+            multiple: true
+            search_fields: [title,description,principle]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Resources"
+            name: "resources"
+            widget: "relation"
+            required: false
+            collection: "resource"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Offerings"
+            name: "offerings"
+            widget: "relation"
+            required: false
+            collection: "offerings"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+          - label: "Related Philosophies"
+            name: "philosophies"
+            widget: "relation"
+            required: false
+            collection: "philosophies"
+            multiple: true
+            search_fields: [title,description]
+            display_fields: [title]
+            value_field: "{{slug}}"
+      - {label: "License", name: "license", widget: "string", required: false}
   - name: "resource" # Used in routes, e.g., /admin/collections/blog
     label: "Resource" # Used in the UI
     folder: "_collections/_resources" # The path to the folder where the documents are stored
