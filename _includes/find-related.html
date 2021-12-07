@@ -1,7 +1,8 @@
 {%- assign search = include.slug | default: page.slug -%}
 {%- assign search_collection = include.collection | default: page.collection -%}
 {%- assign related = include.related | default: page.related -%}
-{%- assign header = include.header | default: 'h2' -%}
+{%- assign header = include.header | default: false -%}
+{%- assign header_tag = include.header_tag | default: 'h2' -%}
 {%- assign header_class = include.header_class | default: 'title is-4' -%}
 {%- assign button_class = include.button_class | default: 'button is-small' -%}
 
@@ -37,8 +38,8 @@
   {%- if filter_collection contains group.name -%}
     <div class="block">
     {% assign filter_size = filter_collection | size %}
-    {%- if filter_size > 1 -%}
-      <{{ header }} class="{{ header_class }}">{{ group.name | capitalize }}</{{ header }}>
+    {%- if header -%}
+      <{{ header_tag }} class="{{ header_class }}">{{ group.name | capitalize }}</{{ header_tag }}>
     {%- endif -%}
     {%- case group.name -%}
       {%- when 'resources' -%}
