@@ -33,6 +33,6 @@ We are social animals. In any group situation, there is an invisible energetic f
 
 These currents flow from things like: familiarity/unfamiliarity; power; norms; trust; expectations; values; habits; culture; attire; language; material surroundings; current events; as well as the individual perceptions and embodied states of people in the group. 
 
-We use “Group field” as a value-neutral term. The field can be charged with a vast range of qualities, and these can be empowering or disempowering to the group participants. It can be boring, tense, inhibiting, somber, oppressive, rigid, sterile. Or it can be enlivening, electric, thoughtful, trusting, meditative, friendly, supportive, dynamic, and generative. 
+We use "Group field" as a value-neutral term. The field can be charged with a vast range of qualities, and these can be empowering or disempowering to the group participants. It can be boring, tense, inhibiting, somber, oppressive, rigid, sterile. Or it can be enlivening, electric, thoughtful, trusting, meditative, friendly, supportive, dynamic, and generative. 
 
 There is always a group field at play whenever we meet in groups, even for example in a hushed final exam room when students are silent and concentrating on their own exam.

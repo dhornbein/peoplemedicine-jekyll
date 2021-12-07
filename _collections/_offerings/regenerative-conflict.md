@@ -19,4 +19,4 @@ The key to tapping into the relationship-deepening power of conflict is to break
 
 - **Green Room**: Participants take turns getting their Story off their chest while being heard by the other party, inside a strongly protective container that protects both story-teller and listener from unfairness, harshness and blame. 
 - **Observatory**: After hearing each other’s stories, participants weave their realities together guided by respect for each other’s values and desire to stay in relationship.
-- **Sacred Repair**: Participants make trust-sized, actionable Medicine Requests for the next time they encounter the “footprint” of this conflict. 
+- **Sacred Repair**: Participants make trust-sized, actionable Medicine Requests for the next time they encounter the "footprint" of this conflict. 

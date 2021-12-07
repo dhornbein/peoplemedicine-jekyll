@@ -6,7 +6,7 @@ icon-color: /assets/img/offerings/meetings-color.png
 deliverables:
   - Learn how to open meetings with simple, effective micro-practices that build trust within the group’s comfort zone (with easy variations to fit different contexts)
   - Level up your group’s success at getting through the agenda with a visual tool that keeps the group tightly oriented and allows for more equitable adjustments during the meeting. 
-  - Learn a simple tool for making the “implicit settings” of the meeting transparent to prevent confusion and support cognitive differences.
+  - Learn a simple tool for making the "implicit settings" of the meeting transparent to prevent confusion and support cognitive differences.
   - Gain real insight into why meetings are so draining and how to minimize friction and frustration. 
 order: 3
 date: 2021-11-03
