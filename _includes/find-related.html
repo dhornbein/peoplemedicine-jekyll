@@ -1,19 +1,77 @@
 {%- assign search = include.slug | default: page.slug -%}
 {%- assign search_collection = include.collection | default: page.collection -%}
 {%- assign related = include.related | default: page.related -%}
+{%- assign header = include.header | default: 'h2' -%}
+{%- assign header_class = include.header_class | default: 'title is-4' -%}
+{%- assign button_class = include.button_class | default: 'button is-small' -%}
+
+{%- capture filter_default -%}
+  {%- for item in site.collections -%}
+    {{ item.label }}, 
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- assign filter_collection = include.filter | default: filter_default | split: ',' -%}
 {%- assign whole = "" | split: ',' -%}
+
 
 {%- for doc in site.documents -%}
   {%- assign related_true = doc.related[search_collection] | where: '', search -%}
   {%- if related_true -%}
     {% unless related[doc.collection] contains doc.slug %}
-    {%- assign whole = whole | push: doc.slug -%}
+    {%- assign whole = whole | push: doc -%}
     {% endunless %}
   {%- endif -%}
 {%- endfor -%}
 
-{%- for item in related -%}
-  {%- assign whole = whole | concat: item[1] -%}
+{%- for items in related -%}
+  {%- for slug in items[1] -%}
+    {%- assign doc = site.documents | where: 'slug', slug  -%}
+    {%- assign whole = whole | push: doc[0] -%}
+  {%- endfor -%}
 {%- endfor -%}
 
-{{ whole | join: ',' }}
+{%- assign groups = whole | group_by: 'collection' -%}
+
+{%- for group in groups -%}
+  {%- if filter_collection contains group.name -%}
+    <div class="block">
+    {% assign filter_size = filter_collection | size %}
+    {%- if filter_size > 1 -%}
+      <{{ header }} class="{{ header_class }}">{{ group.name | capitalize }}</{{ header }}>
+    {%- endif -%}
+    {%- case group.name -%}
+      {%- when 'resources' -%}
+        {%- for res in group.items -%}
+          {%- if page.id != res.id -%}
+          <aside class="media">
+            <figure class="media-left">
+              <p class="image is-64x64 is-clipped">
+                <a href="{{ res.url }}">{%- include thumbnail.html class="has-drop-shadow" size="100" file=res.file href=res.links.first.href alt=res.title -%}</a>
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <a href="{{ res.url }}"><strong>{{ res.title }}</strong></a>
+                  <br>
+                  {{ res.description }}
+                </p>
+              </div>
+            </div>
+          </aside>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        <div class="buttons">
+          {%- for doc in group.items -%}
+            {%- if page.id != doc.id -%}
+              <a href="{{ doc.url }}" class="{{ button_class }}">{{ doc.title }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+    {%- endcase -%}
+  </div>
+  {%- endif -%}
+{%- endfor -%}
+
