@@ -2,9 +2,6 @@
 layout: default
 ---
 
-{%- capture related -%}{%- include find-related.html -%}{%- endcapture -%}
-{%- assign related = related | split: ',' -%}
-
 <section class="section">
   <div class="container is-fullhd">
     <div class="columns is-centered is-justify-content-space-around">
@@ -29,6 +26,14 @@ layout: default
             <li><a href="{{ item.url }}" {%- if page.slug == item.slug -%}class="is-active"{%- endif -%}>{{ item.title }}</a></li>
             {%- endfor -%}
           </ul>
+          <p class="menu-label">
+            Skills
+          </p>
+          <ul class="menu-list">
+            {%- for item in site['skills'] -%}
+            <li><a href="{{ item.url }}" {%- if page.slug == item.slug -%}class="is-active"{%- endif -%}>{{ item.title }}</a></li>
+            {%- endfor -%}
+          </ul>
         </aside>
       </div>
       <div class="column is-readable-width">
@@ -38,58 +43,28 @@ layout: default
         </main>
         <aside>
           <h2 class="title is-4">Fundamental Skills</h2>
-          <ul class="tags are-medium">
-            {%- for skill in page.skills -%}
-            <li class="tag is-light is-primary">{{ skill }}</li>
+          {%- include find-related.html filter="skills" -%}
+
+          {%- if page.citations -%}
+          <h2 class="title is-4">Citations</h2>
+            {%- for cite in page.citations -%}
+            <p class="block content">{{ cite | markdownify }}</p>
             {%- endfor -%}
-          </ul>
-        </aside>
-        <aside>
-          {%- for item in related -%}
-            {%- assign doc = site.documents | where: 'slug',item -%}
-            {%- if doc -%}
-              <a href="{{ doc[0].url }}" class="button is-primary is-outlined">{{ doc[0].title }}</a>
-            {%- endif -%}
-          {%- endfor -%}
+          {%- endif -%}
         </aside>
       </div>
       <aside class="column is-one-third-desktop">
+        {%- if page.principle -%}
         <div class="box">
-          <strong class="is-size-6 is-uppercase is-family-monospace">Core Principle:</strong> 
+          <strong class="is-size-6 is-uppercase is-family-monospace">Core Principle</strong> 
           <p class="is-size-4">{{ page.principle }}</p>
         </div>
+        {%- endif -%}
 
-        <h2 class="title is-4">Patterns</h2>
-        <div class="tags are-medium">
-          {%- for slug in page.patterns -%}
-            {%- assign pattern = site.patterns | where: 'slug', slug -%}
-            <a href="{{ pattern[0].url }}" class="tag is-primary">{{ pattern[0].title }}</a>
-          {%- endfor -%}
+        <div class="box">
+          <p class="is-size-6 is-uppercase is-family-monospace">Related Concepts</p>
+          {%- include find-related.html header=true filter="patterns,philosophies,offerings,resources" -%}
         </div>
-
-        <h2 class="title is-4">Resources</h2>
-        {%- for res in site['resources'] -%}
-          {%- for test in page.resources -%}
-          {%- if test == res.slug -%}
-            <article class="media">
-              <figure class="media-left">
-                <p class="image is-64x64">
-                  <a href="{{ res.url }}">{%- include thumbnail.html class="has-drop-shadow" size="100" file=res.file href=res.links.first.href alt=res.title -%}</a>
-                </p>
-              </figure>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <a href="{{ res.url }}"><strong>{{ res.title }}</strong></a>
-                    <br>
-                    {{ res.description }}
-                  </p>
-                </div>
-              </div>
-            </article>
-          {%- endif -%}
-          {%- endfor -%}
-        {%- endfor -%}
         
       </aside>
     </div>
