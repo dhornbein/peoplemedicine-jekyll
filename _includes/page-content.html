@@ -1,0 +1,4 @@
+{%- assign name = include.name -%}
+{% assign page = site.pages | where: "name", name | first %}
+
+{{ page.content | markdownify }}

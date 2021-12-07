@@ -470,3 +470,20 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Categories", name: "category", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
+
+  - name: pages
+    label: About Pages
+    label_singular: Page
+    folder: content/about
+    create: true
+    summary: "{{title}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "hidden", default: about, required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string", required: false}
+      - label: "Redirect From"
+        name: "redirect_from"
+        widget: "list"
+        required: false
+        collapsed: false

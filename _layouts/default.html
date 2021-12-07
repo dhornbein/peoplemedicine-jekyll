@@ -16,7 +16,7 @@
       {%- include nav.html -%}
     {%- endif -%}
     
-    <main class="{{ page.main.class }}">
+    <main class="{{ page.main.class }} {{ page.layout | default: 'default' | prepend: 'layout-page-' }} {{ layout.layout | default: 'default' | prepend: 'layout-layout-' }}">
       {{ content }}
     </main>
 

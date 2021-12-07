@@ -52,6 +52,24 @@ defaults:
   -
     scope:
       path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "content/collection"
+    values:
+      layout: "default"
+      type: collection
+  -
+    scope:
+      path: "content/about"
+    values:
+      layout: "page"
+      type: about
+  -
+    scope:
+      path: ""
       type: "resources"
     values:
       layout: "resource"

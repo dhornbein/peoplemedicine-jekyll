@@ -1,5 +1,7 @@
 ---
 nav: false
+layout: default
+permalink: /
 ---
     
     <section class="hero is-fullheight has-background-black-ter" id="home-hero">
@@ -51,9 +53,7 @@ nav: false
           <div class="columns is-vcentered">
             <div class="column is-half is-size-4 is-size-3-desktop">
               <p class="is-size-7 is-uppercase is-family-monospace">Invocation</p>
-              <p>What would it be like if working to build a more equitable and life-sustaining world were also regenerative and healing for the people doing it?</p>
-              <p>Do you sense tectonic weaknesses in our current social change-making systems? Do you wonder if deep down, we’re really getting anywhere collectively?</p>
-              <p>We believe that if we turn towards these tectonic rumblings now, we’ll be better able to shape-shift our organizations to meet the wickedly complex challenges our world is facing.</p>
+              {%- include page-content.html name="invocation.md" -%}
             </div>
             <div class="column has-text-centered">
               <img src="{{ base.url | prepend: site.url }}/assets/img/web-3-circles.svg" alt="">
@@ -69,7 +69,7 @@ nav: false
           <div class="columns is-centered">
             <div class="column is-half">
               <div class="box">
-                <p>Let us help you make your teams more resilient and your work more regenerative for you, your organization and the people you serve.  </p>
+                <p>Let us help you make your teams more resilient and your work more regenerative for you, your organization and the people you serve.</p>
                 
                 {% include newsletter.html label="We’ll write to you:" %}
       
@@ -88,11 +88,7 @@ nav: false
           </div>
           <div class="column is-half is-size-5 has-background-white-ter p-4 has-rounded-corners">
             <p class="is-size-7 is-uppercase is-family-monospace">Who We Are</p>
-            
-            <p>We are experienced social designers who integrate trust and structure for changemakers. If your organization has weak trust bonds, either internally or externally, the effectiveness of your most tried and true business structures will be constantly draining away. Similarly, if your organizational practices for decision making, communication and accountability are shaky, it’s hard for people to trust themselves or each other or to bring their most powerful, whole selves to their work.</p>
-            <p>It’s when these two dimensions are holistically woven together, so that high trust levels and solid business structures flow into and strengthen one another, that teams unlock higher levels of well-being, collective intelligence, effectiveness and impact.</p>
-            <p>We design regenerative organizational patterns for social change-makers at all levels by integrating the social-emotional dimensions of trust and belonging with the functionality of good business structures. We help groups of any size step into deep organizational resilience for the complex and increasingly chaotic future rising to meet us.</p>
-            <p>Let us help you make your teams more resilient and your work more regenerative for you, your organization and the people you serve.</p>
+            {%- include page-content.html name="who-we-are.md" -%}
           </div>
           <div class="column">
           </div>
@@ -104,12 +100,12 @@ nav: false
       
       <div class="bio bio--maria">
         <h2 class="title">Maria Talero</h2>
-        <p>Maria is a native Colombian educator and facilitator with 20 years experience in designing transformative social learning environments. She believes that we jump-start deep and authentic engagement on collective action issues by fostering empathetic and trusting relationships in organizations, workplaces and communities.</p>
+        {%- include page-content.html name="maria.md" -%}
       </div>
       
       <div class="bio bio--drew">
         <h2 class="title">Drew Hornbein</h2>
-        <p>Drew is an activist entrepreneur who believes that by remembering more equitable, democratic ways of working together we can solve the crisis of our time. He has worked within activist movements, mutual aid groups responding to disaster, income-sharing communes, radical self-directed K-12 schools, cooperatives, and non-profits as a facilitator, technologist and organizational catalyst.</p>
+        {%- include page-content.html name="drew.md" -%}
       </div>
       
     </section>
@@ -124,7 +120,9 @@ nav: false
     <section class="section is-medium content has-background-green mb-0" id="what">
       <div class="container">
         <h2 class="title has-text-centered is-uppercase">What we do</h2>
-        <p style="max-width: 65ch; margin:0 auto;">We believe that the organizational practices we need the most in this moment of tumultuous change are those that strengthen trust and belonging - but that these practices only flourish when people really feel held by high-functioning structures for communication, decision-making and accountability in their organization.</p>
+        <div class="is-readable-width has-text-centered mx-auto">
+          {%- include page-content.html name="what-we-do.md" -%}
+        </div>
       </div>
     </section>
 
