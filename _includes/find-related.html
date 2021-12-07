@@ -1,0 +1,19 @@
+{%- assign search = include.slug | default: page.slug -%}
+{%- assign search_collection = include.collection | default: page.collection -%}
+{%- assign related = include.related | default: page.related -%}
+{%- assign whole = "" | split: ',' -%}
+
+{%- for doc in site.documents -%}
+  {%- assign related_true = doc.related[search_collection] | where: '', search -%}
+  {%- if related_true -%}
+    {% unless related[doc.collection] contains doc.slug %}
+    {%- assign whole = whole | push: doc.slug -%}
+    {% endunless %}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for item in related -%}
+  {%- assign whole = whole | concat: item[1] -%}
+{%- endfor -%}
+
+{{ whole | join: ',' }}

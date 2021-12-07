@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{%- capture related -%}{%- include find-related.html -%}{%- endcapture -%}
+{%- assign related = related | split: ',' -%}
+
 <section class="section">
   <div class="container is-fullhd">
     <div class="columns is-centered is-justify-content-space-around">
@@ -40,6 +43,14 @@ layout: default
             <li class="tag is-light is-primary">{{ skill }}</li>
             {%- endfor -%}
           </ul>
+        </aside>
+        <aside>
+          {%- for item in related -%}
+            {%- assign doc = site.documents | where: 'slug',item -%}
+            {%- if doc -%}
+              <a href="{{ doc[0].url }}" class="button is-primary is-outlined">{{ doc[0].title }}</a>
+            {%- endif -%}
+          {%- endfor -%}
         </aside>
       </div>
       <aside class="column is-one-third-desktop">
