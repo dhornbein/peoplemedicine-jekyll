@@ -39,6 +39,8 @@ collections:
     output: true
   patterns:
     output: true
+  skills:
+    output: true
 
 defaults:
   -
@@ -64,6 +66,12 @@ defaults:
       type: "patterns"
     values:
       layout: "patterns"
+  -
+    scope:
+      path: ""
+      type: "skills"
+    values:
+      layout: "skills"
 
 # Build settings
 plugins:
