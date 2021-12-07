@@ -11,7 +11,7 @@ media_folder: "assets/uploads"
 collections:
   - name: "resource" # Used in routes, e.g., /admin/collections/blog
     label: "Resource" # Used in the UI
-    folder: "_resources" # The path to the folder where the documents are stored
+    folder: "_collections/_resources" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -127,7 +127,7 @@ collections:
       - {label: "License", name: "license", widget: "string", required: false}
   - name: "offerings" 
     label: "Offerings" # Used in the UI
-    folder: "_offerings" # The path to the folder where the documents are stored
+    folder: "_collections/_offerings" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -204,7 +204,7 @@ collections:
       - {label: "Order", name: "order", widget: "number", value_type: int, required: false}
   - name: "philosophies" 
     label: "Philosophies"
-    folder: "_philosophies"
+    folder: "_collections/_philosophies"
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -268,7 +268,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
   - name: "patterns" 
     label: "Patterns"
-    folder: "_patterns"
+    folder: "_collections/_patterns"
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -332,7 +332,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "string", required: false, hint: "tags separated by spaces"}
   - name: "skills" 
     label: "Skills"
-    folder: "_skills"
+    folder: "_collections/_skills"
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
