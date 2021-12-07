@@ -45,6 +45,25 @@ redirect_from: /p
 
 <section class="section">
   <div class="container">
+    <h1 class="title is-2">Skills</h1>
+    <div class="columns is-multiline">
+      {%- for skill in site.skills -%}
+      <a href="{{ skill.url }}" class="column is-one-third-tablet patter">
+        <div class="box is-fullheight has-background-cyan">
+          <h2 class="title mb-1">{{ skill.title }}</h2>
+          <p class="block">{{ skill.description }}</p>
+          {%- if skill.principle -%}
+            <p class="block is-size-5"><strong>Core Principle:</strong> {{ skill.principle }}</p>
+          {%- endif -%}
+        </div>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <h1 class="title is-2">Offerings</h1>
     <div class="columns is-multiline">
       {%- for offering in site.offerings -%}
