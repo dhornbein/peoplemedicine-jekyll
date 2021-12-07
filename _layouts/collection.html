@@ -1,17 +1,28 @@
 ---
 layout: default
+relation_filter_default: offerings,resources,philosophies,patterns,skills
 ---
 
 <section class="section">
   <div class="container is-fullhd">
-    <div class="columns is-centered is-justify-content-space-around">
-      <div class="colmun is-narrow">
+    <div class="columns is-variable is-6 is-centered is-justify-content-space-around">
+      <div class="column is-hidden-desktop">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/p">Overview</a></li>
+            <li><a href="/{{ page.collection }}">{{ page.collection | capitalize }}</a></li>
+            <li class="is-active"><a href="{{ page.url }}" aria-current="page"></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="colmun is-narrow is-hidden-touch">
         <aside class="menu">
           <p class="menu-label">
             <a href="/p">Overview</a>
           </p>
           <p class="menu-label">
-            Philosophy
+            Philosophies
           </p>
           <ul class="menu-list">
             {%- for item in site['philosophies'] -%}
@@ -39,12 +50,13 @@ layout: default
       <div class="column is-readable-width">
         <h1 class="title is-2">{{ page.title }}</h1>
         <main class="content">
+          <div class="block is-hidden-desktop">
+            <strong class="is-size-6 is-uppercase is-family-monospace">Core Principle</strong> 
+            <p class="is-size-4">{{ page.principle }}</p>
+          </div>
           {{ content }}
         </main>
         <aside>
-          <h2 class="title is-4">Fundamental Skills</h2>
-          {%- include find-related.html filter="skills" -%}
-
           {%- if page.citations -%}
           <h2 class="title is-4">Citations</h2>
             {%- for cite in page.citations -%}
@@ -55,7 +67,7 @@ layout: default
       </div>
       <aside class="column is-one-third-desktop">
         {%- if page.principle -%}
-        <div class="box">
+        <div class="box has-background-orange is-hidden-touch">
           <strong class="is-size-6 is-uppercase is-family-monospace">Core Principle</strong> 
           <p class="is-size-4">{{ page.principle }}</p>
         </div>
@@ -63,10 +75,15 @@ layout: default
 
         <div class="box">
           <p class="is-size-6 is-uppercase is-family-monospace">Related Concepts</p>
-          {%- include find-related.html header=true filter="patterns,philosophies,offerings,resources" -%}
+          <hr class="my-2">
+          {%- assign relation_filter = layout.relation_filter | default: layout.relation_filter_default -%}
+          {%- include find-related.html header=true filter=relation_filter -%}
         </div>
         
       </aside>
     </div>
+    <footer>
+      {%- include collections-prev-next.html -%}
+    </footer>
   </div>
 </section>

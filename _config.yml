@@ -59,19 +59,19 @@ defaults:
       path: ""
       type: "philosophies"
     values:
-      layout: "philosophies"
+      layout: "philosophy"
   -
     scope:
       path: ""
       type: "patterns"
     values:
-      layout: "patterns"
+      layout: "collection"
   -
     scope:
       path: ""
       type: "skills"
     values:
-      layout: "skills"
+      layout: "collection"
 
 # Build settings
 plugins:
