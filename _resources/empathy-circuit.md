@@ -24,8 +24,13 @@ links:
   - text: View Source
     href: https://docs.google.com/document/d/1lWxM3kXCLvEcbHNNmS5UFFfx2FpvQ_V8kKugdnSs4J8/edit
     target: _blank
+related:
+  skills:
+    - active-listening
+    - helping-others-be-seen
 citations:
-  - adapted from [strengthening teams](https://docs.google.com/document/d/1YYG3ha-TpoGck7e8z3hdg-pF4kTiqUl0epjqgaAhrwk/edit)
+  - adapted from [strengthening
+    teams](https://docs.google.com/document/d/1YYG3ha-TpoGck7e8z3hdg-pF4kTiqUl0epjqgaAhrwk/edit)
   - active listening session
 course: trust building
 ---
