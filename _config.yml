@@ -29,18 +29,18 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 collections:
+  skills:
+    output: true
+  patterns:
+    output: true
+  philosophies:
+    output: true
   offerings:
     sort_by: order
     permalink: /:collection#:name
   resources:
     output: true
     permalink: /r/:name
-  philosophies:
-    output: true
-  patterns:
-    output: true
-  skills:
-    output: true
 
 defaults:
   -
