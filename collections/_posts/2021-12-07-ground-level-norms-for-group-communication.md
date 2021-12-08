@@ -16,10 +16,9 @@ related:
     - i-statements
     - sharing-impact-skillfully
 ---
-Here are some skills you can use to better understand communition.
+A wetland acts as a natural water filter, by trapping sediments and converting pollutants into less harmful chemicals. We see these communication norms as key baby steps towards a healthy filtering system for group communication - one that transforms interpersonal tensions into trust energy. (By themselves, these norms won't get us all the way there but they're a really good start in that direction).
 
-----
-
+- - -
 
 <div class="columns is-multiline is-centered">
   {% for skill in page.related.skills %}
@@ -33,7 +32,7 @@ Here are some skills you can use to better understand communition.
   {% endfor %}
 </div>
 
-----
+- - -
 
 <div>
 {% for skill in page.related.skills %}
