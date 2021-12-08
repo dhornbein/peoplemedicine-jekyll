@@ -31,7 +31,9 @@ Dedicated to Naveed Heydari and Theo Grondahl
     <div class="column is-one-third-tablet">
       <a href="#{{ item.slug }}" class="box is-fullheight is-flex is-flex-direction-column is-align-content-space-between">
         <p class="title is-5">{{ item.title }}</p>
+        {%- if item.painpoint -%}
         <p class="has-text-danger"><strong class="is-family-monospace is-size-7">Pain Point</strong><br>{{ item.painpoint }}</p>
+        {%- endif -%}
       </a>
     </div>
   {% endfor %}
