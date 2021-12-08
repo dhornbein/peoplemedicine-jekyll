@@ -29,7 +29,7 @@ A wetland acts as a natural water filter, trapping sediments and converting poll
     <div class="column is-one-third-tablet">
       <a href="#{{ item.slug }}" class="box is-fullheight is-flex is-flex-direction-column is-align-content-space-between">
         <p class="title is-5">{{ item.title }}</p>
-        <p><strong class="is-family-monospace is-size-7">Pain Point</strong><br>{{ item.painpoint }}</p>
+        <p class="has-text-danger"><strong class="is-family-monospace is-size-7">Pain Point</strong><br>{{ item.painpoint }}</p>
       </a>
     </div>
   {% endfor %}
@@ -42,7 +42,9 @@ A wetland acts as a natural water filter, trapping sediments and converting poll
   {%- assign item = site.skills | where: 'slug', skill | first -%}
   <div class="block" id="{{ item.slug }}">
     <h3 class="title is-4">{{ item.title }}</h3>
-    <p><strong class="is-family-monospace is-size-7">Pain Point</strong><br>{{ item.painpoint }}</p>
+    {%- if item.painpoint -%}
+    <p class="px-4 has-text-danger"><strong class="is-family-monospace is-size-7">Pain Point</strong><br>{{ item.painpoint }}</p>
+    {%- endif -%}
     {{ item.content | markdownify }}
   </div>
 {% endfor %}
