@@ -1,6 +1,7 @@
 ---
 title: "Sharing emotional impact "
-painpoint: Not having space to authentically share how something makes you feel
+painpoint: "You feel upset, flooded or triggered by what someone has said.
+  You're on the brink of escalating. "
 date: 2021-12-06T17:44:03.515Z
 ---
 Trees send distress signals to each other through their roots. Through underground fungal networks called "mycorrhizae," they can perform incredible feats of care-taking: for example, elder trees use these networks to pump extra sugar into the roots of younger trees that are still too young to reach the light of the forest canopy. Our trouble as humans is that we often lack a good way of communicating our distress to each other in a way that awakens the willingness to care-take: vulnerability feels scary, like a sign of weakness. But when we skillfully signal our emotional state to others, it can soften their hard edges.
