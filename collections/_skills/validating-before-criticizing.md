@@ -1,6 +1,6 @@
 ---
 title: Validating before Criticizing
-painpoint: Criticism lands hard or isn't taken well
+painpoint: Their criticism makes you feel unappreciated
 date: 2021-12-07T21:43:24.311Z
 ---
 Elephants touch each other with their trunks. Monkeys engage in social grooming. Dolphins rub their flippers over each others' bodies: animals constantly reassure each other with touch (scientists call it "affiliation"). We human animals often underestimate the need to put a verbal touch of reassurance into our communication with someone we disagree with. It's not caving in - it's actually a way of creating better energetic conditions for sorting out those disagreements. 
