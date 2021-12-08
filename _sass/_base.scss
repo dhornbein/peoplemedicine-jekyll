@@ -258,7 +258,7 @@ a.offering-button {
 .footer {
   background-image: url(/assets/img/pm_hands_bottom.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto 11rem;
   background-position: center bottom;
   a:link {
     color: $black-ter;
