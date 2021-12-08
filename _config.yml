@@ -28,7 +28,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-collections_dir: _collections
+collections_dir: collections
 collections:
   skills:
     output: true
@@ -42,6 +42,8 @@ collections:
   resources:
     output: true
     permalink: /r/:name
+  posts:
+    permalink: /a/:name
 
 defaults:
   -

@@ -1,0 +1,26 @@
+---
+permalink: /articles/
+redirect_from: /a
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2">Our Articles</h1>
+    <div class="columns is-multiline">
+      {%- for post in site.posts -%}
+      <a href="{{ post.url }}" class="column is-one-third-tablet">
+        <article class="post">
+          <div class="columns is-centered is-justify-content-space-around">
+            <div class="column is-readable-width">
+              
+              <h2 class="title mb-1">{{ post.title }}</h2>
+              <p class="block">{{ post.description }}</p>
+              
+            </div>
+          </div>
+        </article>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
