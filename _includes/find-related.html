@@ -28,7 +28,9 @@
 {%- for items in related -%}
   {%- for slug in items[1] -%}
     {%- assign doc = site.documents | where: 'slug', slug  -%}
-    {%- assign whole = whole | push: doc[0] -%}
+    {% if doc[0] %}
+      {%- assign whole = whole | push: doc[0] -%}
+    {% endif %}
   {%- endfor -%}
 {%- endfor -%}
 
