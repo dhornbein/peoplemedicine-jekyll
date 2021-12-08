@@ -1,5 +1,5 @@
 ---
-title: Ground Level Norms for Group Communication
+title: Living Systems Norms for Group Communication (Baby Steps)
 date: 2021-11-18 15:01:22 -0700
 categories: communication norms
 color: green
