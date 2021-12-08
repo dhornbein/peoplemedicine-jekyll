@@ -17,6 +17,7 @@ related:
     - sharing-impact-skillfully
     - validating-before-criticizing
     - helping-others-be-seen
+    - inviting-exiles-coming-out-of-hiding
 ---
 A wetland acts as a natural water filter, trapping sediments and converting pollutants into less harmful chemicals. We see these communication norms as BABY STEPS that start to transform interpersonal tensions into trust energy. Ultimately, the goal is to grow a natural filtering system for group communication that keeps glorious amounts of trust energy circulating! (By themselves, these norms won't get us all the way there but they're a really good start in that direction).
 
