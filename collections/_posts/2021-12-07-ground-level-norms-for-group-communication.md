@@ -4,11 +4,11 @@ date: 2021-11-18 15:01:22 -0700
 categories: communication norms
 color: green
 author:
+  - name: Maria Talero
+    email: maria@peoplemedicine.org
   - name: Drew Hornbein
     email: drew@peoplemedicine.org
     url: https://dddrew.org
-  - name: Maria Talero
-    email: maria@peoplemedicine.org
 related:
   skills:
     - i-statements
