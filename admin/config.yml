@@ -419,7 +419,8 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Description", name: "description", widget: "text", required: false, hint: "Short 1-2 sentence summary"}
+      - {label: "Pain Point", name: "painpoint", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - label: Related # collection of related fields
         name: related
