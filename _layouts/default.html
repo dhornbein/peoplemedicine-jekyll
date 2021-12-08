@@ -12,13 +12,17 @@
   </head>
   <body>
 
-    {%- if page.nav != false -%}
+    {%- unless page.nav == false -%}
       {%- include nav.html -%}
-    {%- endif -%}
-    
+    {%- endunless -%}
+      
     <main class="{{ page.main.class }} {{ page.layout | default: 'default' | prepend: 'layout-page-' }} {{ layout.layout | default: 'default' | prepend: 'layout-layout-' }}">
       {{ content }}
     </main>
+      
+    {%- unless page.footer.display == false -%}
+      {%- include footer.html -%}
+    {%- endunless -%}
 
     <script type="text/javascript" src="{{ base.url | prepend: site.url }}/assets/main.js"></script>
   </body>

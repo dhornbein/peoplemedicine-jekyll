@@ -254,3 +254,17 @@ a.offering-button {
             transform: rotate(360deg);
   }
 }
+
+.footer {
+  background-image: url(/assets/img/pm_hands_bottom.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  a:link {
+    color: $black-ter;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

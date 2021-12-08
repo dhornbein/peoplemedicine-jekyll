@@ -35,6 +35,10 @@ $body-background-color: $white-ter;
 $text-strong: inherit;
 $content-blockquote-background-color: transparent;
 
+$footer-background-color:$pink;
+$footer-color: $pink-invert;
+$footer-padding: 3rem 1.5rem 10rem;
+
 @import "../node_modules/bulma/sass/utilities/derived-variables";
 $addColors: (
   "pink":($pink, $pink-invert),
