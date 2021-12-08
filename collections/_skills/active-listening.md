@@ -1,6 +1,6 @@
 ---
 title: Active Listening
-painpoint: You don't feel understood by those you are trying to communicat with
+painpoint: Your perspective feels like it just got trampled on
 date: 2021-12-06T17:43:32.066Z
 ---
 In cows (as in other species), mother-offspring pairs communicate with bidirectional "contact calls" - both mother and offspring recognize each other's distinct vocalizations, so when the calf bleats and the mother answers, the calf knows that it has been Heard (and vice versa).  We tend the Group Field by offering each other the sweetness of being Heard - even if we don't agree with what's being said - by Mirroring before Responding. 
