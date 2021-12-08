@@ -2,7 +2,7 @@
 title: Ground Level Norms for Group Communication
 date: 2021-11-18 15:01:22 -0700
 categories: communication norms
-color: pink
+color: green
 author:
   - name: Drew Hornbein
     email: drew@peoplemedicine.org
