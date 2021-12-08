@@ -2,7 +2,7 @@
 title: Active Listening
 date: 2021-12-06T17:43:32.066Z
 ---
-Before responding to what someone has said, let them know you’re really listening and signal positive intent by reflecting back to them what you heard them saying, sticking closely to their own words ("What I hear you saying is…"). 
+In cows (as in other species), mother-offspring pairs communicate with bidirectional "contact calls" - both mother and offspring recognize each other's distinct vocalizations, so when the calf bleats and the mother answers, the calf knows that it has been Heard (and vice versa).  We tend the Group Field by offering each other the sweetness of being Heard - even if we don't agree with what's being said - by Mirroring before Responding. When someone has voiced their opinion, let them know you’re really listening, and signal positive intent, by reflecting back to them what you heard them saying, sticking closely to their own words ("What I hear you saying is…"). This practice communicates your care and respect for the other person in themselves, apart from their opinions. It is a seed that builds trust and goodwill every time it is sown. 
 
 In your reflection, try to avoid JIFing:
 
