@@ -1,6 +1,6 @@
 ---
 title: Owning your interpretations
-painpoint: It's hard to even listen when we disagree strongly
+painpoint: It feels like the other person is trying to impose their truth on yours
 date: 2021-12-06T17:43:54.908Z
 ---
 Animals are often territorial, and we take that to mean "aggressive." But if you flip it around, territorial displays by animals (say, a spotted leopard spraying urine on a tree trunk) are actually a way of **preventing** aggression by indicating ownership (another spotted leopard can pick up the message and choose to avoid the fight by going elsewhere). Human language-users have a problem: our words are constantly at risk of seeming to other people like we're staking claiming to the whole territory of unassailable "objective" knowledge. This happens when we don't own our interpretations AS just that, our own interpretations - our own stories. 
