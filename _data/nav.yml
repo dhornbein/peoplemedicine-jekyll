@@ -14,4 +14,10 @@ start:
     children:
       type: collection
       collection: resources
+  - 
+    url: /articles
+    title: Articles
+    children:
+      type: posts
+      collection: posts
 end:

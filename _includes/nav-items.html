@@ -25,6 +25,19 @@
                 {{ child.title }}
                 </a>
                 {%- endfor -%}
+            {%- when "posts" -%}
+                {%- for child in site.posts limit: 5 -%}
+                <a class="navbar-item {% if page.url == child.url %}is-active{% endif %}" href="{{ child.url }}">
+                {%- if child.icon -%}
+                <figure class="image is-24x24 mr-1">
+                    <img src="{{ child.icon }}">
+                </figure>
+                {%- elsif child.color -%}
+                    <span class="tag is-rounded mr-1 has-background-{{ child.color }}"></span>
+                {%- endif -%}
+                {{ child.title }}
+                </a>
+                {%- endfor -%}
             {%- else -%}
                 
             {%- endcase -%}
