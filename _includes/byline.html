@@ -1,18 +1,22 @@
-{%- assign authors = include.authors | default: false -%}
+{%- assign authors = include.authors | default: page.author -%}
 
+{%- assign output = '' | split: ',' -%}
   
-{%- if authors -%}
-<address class="is-inline">By 
+{%- if authors -%} 
   {%- for author in authors -%}
-    {% if forloop.index > 1 %}, {% endif %}
-    {% if forloop.last and forloop.index > 1 %} and {% endif %}
-
-    {%- if author.url -%}
-    <a href="{{ author.url }}" rel="author">{{ author.name }}</a> 
-    {%- else -%}
-      {{ author.name }}
-    {%- endif -%}
-    {% if author.email %} <a href="mailto:{{ author.email }}" title="Send {{ author.name }} an email">💌 </a>{% endif %}
+    {% capture capture %}
+      {% if author.url %}
+        <a href="{{ author.url }}" rel="author">{{ author.name }}</a> 
+      {% elsif author.email %}
+        <a href="{{ author.email | prepend: 'mailto:' }}" rel="author">{{ author.name }}</a> 
+      {% else %}
+        {{ author.name }}
+      {% endif %}
+      {% if author.email %} <a href="{{ author.email | prepend: 'mailto:' }}" title="Send {{ author.name }} an email">💌 </a>{% endif %}
+      {% if author.url %} <a href="{{ author.url }}" title="Visit {{ author.name }}'s website">🌐</a>{% endif %}
+      &nbsp;
+    {% endcapture %}
+    {%- assign output = output | push: capture -%}
   {%- endfor -%}
-</address>
+<address class="is-inline">By {{ output | array_to_sentence_string }}</address>
 {%- endif -%}
