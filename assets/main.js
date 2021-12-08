@@ -130,3 +130,96 @@ if ( canvas ) {
     ctx.stroke();
   }
 }
+
+//  MODAL HANDLING
+
+
+function stringToNode(template) {
+  let modal = document.createElement('template');
+  modal.innerHTML = template;
+  return modal.content.childNodes;
+}
+
+let modalGroup = document.querySelectorAll('[data-modal-group]');
+let modal_template = '<div class="modal"><div class="modal-background"></div><div class="modal-content"></div><button class="modal-close is-large" aria-label="close"></button></div>'
+let modal_card_template = '<div class="modal"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><button class="delete" aria-label="close" date-modal-close></button></header><section class="modal-card-body"></section><footer class="modal-card-foot"></footer></div></div>'
+let modals = [];
+let modalActiveClass = 'is-active';
+
+if (modalGroup) {
+
+modalGroup.forEach(el => {
+  // build modal node
+
+  [...el.children].forEach(el => {
+    if ( ! el.dataset.modalEl ) return; // child element needs attribute data-modal-el="true" to be considered
+
+    modal = el.cloneNode(true);
+
+    let id = modal.id,
+        type = modal.dataset.modalEl,
+        nav = modal.dataset.modalNav,
+        dataTitle = modal.querySelector('[data-modal-title]'),
+        dataContent = modal.querySelector('[data-modal-body]'),
+        content = dataContent ? dataContent : modal.innerHTML,
+        title = dataTitle ? dataTitle : false,
+        template = null;
+
+    switch (type) {
+      case 'card':
+        template = stringToNode(modal_card_template)[0];
+        let card = template.childNodes[1],
+            head = card.childNodes[0],
+            body = card.childNodes[1],
+            foot = card.childNodes[2];
+
+        if (title) head.prepend(title);
+        body.appendChild(content);
+        break;
+      default:
+        template = stringToNode(modal_template);
+        break;
+    }
+    
+    template.id = id;
+    document.body.appendChild(template)
+    el.id = '';
+    modals.push(template);
+
+  })
+});
+
+} // if modal group
+
+let modalButtons = document.querySelectorAll('[data-modal-open]');
+let modalCloseButtons = document.querySelectorAll('.modal-close, .modal-background,[date-modal-close]');
+
+// if there is at least one modal element, work on buttons
+if ( document.querySelector('[data-modal-el]')) {
+  modalButtons.forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault;
+      let target = (el.dataset.modalOpen) ? el.dataset.modalOpen : el.href.replace('#',''),
+          targetEl = document.getElementById(target);
+      
+      modals.forEach(modal => {
+        modal.classList.remove(modalActiveClass)
+      })
+
+      targetEl.classList.add(modalActiveClass);
+      document.documentElement.classList.add('is-clipped');
+    })
+
+  });
+
+  modalCloseButtons.forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault;
+      modals.forEach(modal => {
+        modal.classList.remove(modalActiveClass)
+      })
+      document.documentElement.classList.remove('is-clipped');
+    })
+
+  });
+}

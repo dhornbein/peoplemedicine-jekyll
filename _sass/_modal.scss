@@ -1,0 +1,12 @@
+.modal-card-head {
+  justify-content: space-between;
+  .title {
+    margin-bottom: 0;
+  }
+}
+
+.modal-card-body {
+  &>* {
+    @extend .content
+  }
+}
