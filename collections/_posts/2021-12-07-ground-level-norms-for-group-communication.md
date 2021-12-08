@@ -16,7 +16,7 @@ related:
     - i-statements
     - sharing-impact-skillfully
 ---
-A wetland acts as a natural water filter, by trapping sediments and converting pollutants into less harmful chemicals. We see these communication norms as key baby steps towards a healthy filtering system for group communication - one that transforms interpersonal tensions into trust energy. (By themselves, these norms won't get us all the way there but they're a really good start in that direction).
+A wetland acts as a natural water filter, trapping sediments and converting pollutants into less harmful chemicals. We see these communication norms as baby steps that start to transform interpersonal tensions into trust energy. Ultimately, the goal is to create a whole filtering system for group communication that keeps glorious amounts of trust energy circulating! (By themselves, these norms won't get us all the way there but they're a really good start in that direction).
 
 - - -
 
