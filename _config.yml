@@ -43,7 +43,7 @@ collections:
     output: true
     permalink: /r/:name
   posts:
-    permalink: /a/:name
+    permalink: /a/:title
 
 defaults:
   -
@@ -51,6 +51,12 @@ defaults:
       path: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
   -
     scope:
       path: ""
