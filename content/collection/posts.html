@@ -5,16 +5,16 @@ redirect_from: /a
 
 <section class="section">
   <div class="container">
-    <h1 class="title is-2">Our Articles</h1>
-    <div class="columns is-multiline">
+    <h1 class="title is-2 has-text-centered">Our Articles</h1>
+    <div class="columns is-multiline is-centered">
       {%- for post in site.posts -%}
       <a href="{{ post.url }}" class="column is-one-third-tablet">
-        <article class="post">
+        <article class="post box has-background-{{ post.color | default: 'white' }}">
           <div class="columns is-centered is-justify-content-space-around">
             <div class="column is-readable-width">
               
               <h2 class="title mb-1">{{ post.title }}</h2>
-              <p class="block">{{ post.description }}</p>
+              <p class="block is-size-6">{{ post.excerpt }}</p>
               
             </div>
           </div>
