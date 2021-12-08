@@ -5,7 +5,10 @@
     onsubmit="window.open('https://buttondown.email/people-medicine', 'popupwindow')"
     class="embeddable-buttondown-form"
 >
-    <label class="label" for="bd-email">{{ include.label | default: "Newsletter:" }}</label>
+    {%- unless include.label == false -%}
+    <label class="label" for="bd-email">{{ include.label | default: site.newsletter.label | append: ':' }}</label>
+    {%- endunless -%}
+    
     <div class="field is-grouped is-flex-wrap-wrap">
     <p class="control is-expanded">
         <input type="email" name="email" id="bd-email" class="input" placeholder="Your email please"/>

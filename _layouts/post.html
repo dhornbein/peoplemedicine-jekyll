@@ -1,8 +1,10 @@
 ---
 layout: default
+footer:
+  newsletter: false
 ---
 
-<section class="hero is-primary">
+<section class="hero is-primary has-background-{{ page.color | default: 'primary' }}">
   <div class="hero-body">
     <div class="mx-auto is-readbale-width has-text-centered">
       <h1 class="title">
@@ -17,6 +19,16 @@ layout: default
   <div class="container">
     <div class="mx-auto is-readable-width content">
       {{ content }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="box mx-auto is-readable-width content">
+      <p>{{ page.teaser | default: site.newsletter.blurb }}</p>
+      
+      {% include newsletter.html label=false tags="blog" %}
     </div>
   </div>
 </section>

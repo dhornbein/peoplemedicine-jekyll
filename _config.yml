@@ -28,6 +28,20 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+newsletter:
+  label: Sign Up
+  blurb: Join our newsletter and we'll send you more fun stuff like this.
+
+colors:
+  pink: '#FF77F9'
+  orange: '#FFA47F'
+  yellow: '#F9E800'
+  cyan: '#87FFDD'
+  blue: '#35C7FF'
+  purple: '#A992FF'
+  red: '#FD4796'
+  green: '#C3FF6F'
+
 collections_dir: collections
 collections:
   skills:
