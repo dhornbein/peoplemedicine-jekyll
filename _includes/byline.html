@@ -1,4 +1,5 @@
 {%- assign authors = include.authors | default: page.author -%}
+{%- assign attributes = include.attributes -%}
 
 {%- assign output = '' | split: ',' -%}
   
@@ -14,9 +15,9 @@
       {% endif %}
       {% if author.email %} <a href="{{ author.email | prepend: 'mailto:' }}" title="Send {{ author.name }} an email">💌 </a>{% endif %}
       {% if author.url %} <a href="{{ author.url }}" title="Visit {{ author.name }}'s website">🌐</a>{% endif %}
-      &nbsp;
+    
     {% endcapture %}
     {%- assign output = output | push: capture -%}
   {%- endfor -%}
-<address class="is-inline">By {{ output | array_to_sentence_string }}</address>
+<address class="is-inline"{{ attributes | prepend: ' '}}>By {{ output | array_to_sentence_string }}</address>
 {%- endif -%}
