@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "serve": "bundle exec jekyll serve"
+    "serve": "bundle exec jekyll serve --livereload",
+    "proxy": "npx netlify-cms-proxy-server"
   },
   "repository": {
     "type": "git",
